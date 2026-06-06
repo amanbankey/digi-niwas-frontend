@@ -61,33 +61,33 @@ const statsData = [
 
 export default function FutureEcosystem() {
   return (
-    <section className="min-h-screen bg-[#02080e] text-white px-4 py-8 sm:py-12 lg:py-16 flex flex-col justify-center items-center font-sans antialiased selection:bg-[#3df2a5] selection:text-black">
-      <div className="w-full max-w-[1440px] bg-[#040f1a] border border-slate-900 rounded-2xl p-6 sm:p-8 lg:p-10 shadow-2xl flex flex-col gap-10">
+    <section className="min-h-screen bg-[#274255] text-white px-4 py-8 flex flex-col justify-center items-center font-sans antialiased selection:bg-[#33cc99] selection:text-black">
+      <div className="w-full max-w-[1440px] bg-[#040f1a] border border-slate-900 rounded-2xl p-6 sm:p-8  shadow-2xl flex flex-col gap-10">
         
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-center">
           
           <div className="xl:col-span-4 flex flex-col items-start space-y-4">
             <div className="flex items-center gap-2.5">
-              <span className="w-10 h-10 rounded-xl border border-[#3df2a5]/40 text-[#3df2a5] flex items-center justify-center font-bold text-lg bg-[#051625]">
+              <span className="w-10 h-10 rounded-xl border border-[#33cc99]/40 text-[#33cc99] flex items-center justify-center font-bold text-lg bg-[#051625]">
                 07
               </span>
-              <span className="text-[#3df2a5] tracking-[0.2em] text-xs sm:text-sm font-semibold uppercase">
+              <span className="text-[#33cc99] tracking-[0.2em] text-xs sm:text-sm font-semibold uppercase">
                 FUTURE ECOSYSTEM
               </span>
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight tracking-tight">
               Beyond Properties,<br />
-              <span className="text-[#3df2a5]">Endless Possibilities.</span>
+              <span className="text-[#33cc99]">Endless Possibilities.</span>
             </h2>
 
             <p className="text-slate-400 font-medium text-sm sm:text-base leading-relaxed max-w-md">
               DigiNiwas is building an ecosystem that makes life easier for customers and helps businesses grow together.
             </p>
 
-            <button className="flex items-center gap-2 bg-[#051727] border border-[#3df2a5]/30 text-[#3df2a5] px-5 py-2.5 rounded-xl font-medium text-sm hover:bg-[#3df2a5]/10 transition-all duration-300 shadow-md">
+            <button className="flex items-center gap-2 bg-[#051727] border border-[#33cc99]/30 text-[#33cc99] px-5 py-2.5 rounded-xl font-medium text-sm hover:bg-[#33cc99]/10 transition-all duration-300 shadow-md">
               <span>Coming Soon</span>
-              <IoRocketOutline size={16} className="transform rotate-45 text-[#3df2a5]" />
+              <IoRocketOutline size={16} className="transform rotate-45 text-[#33cc99]" />
             </button>
           </div>
 
@@ -95,10 +95,10 @@ export default function FutureEcosystem() {
             {ecosystemCards.map((card) => (
               <div 
                 key={card.id} 
-                className="bg-[#051422] border border-slate-800/60 rounded-xl p-5 flex flex-col items-center text-center justify-between min-h-[240px] hover:border-[#3df2a5]/30 transition-all duration-300 group"
+                className="bg-[#051422] border border-slate-800/60 rounded-xl hover:scale-105 p-5 flex flex-col items-center text-center justify-between sm:min-h-[240px] hover:border-[#33cc99]/30 transition-all duration-300 group"
               >
-                {/* <div className="w-14 sm:w-20 sm:h-20 h-14 text-3xl sm:text-5xl bg-[#071c2f] rounded-xl flex items-center justify-center text-[#3df2a5] mb-4 border border-slate-800 group-hover:scale-105 transition-transform duration-300"> */}
-                  <card.icon  className='text-3xl sm:text-6xl text-[#3df2a5] font-medium' />
+                {/* <div className="w-14 sm:w-20 sm:h-20 h-14 text-3xl sm:text-5xl bg-[#071c2f] rounded-xl flex items-center justify-center text-[#33cc99] mb-4 border border-slate-800 group-hover:scale-105 transition-transform duration-300"> */}
+                  <card.icon  className='text-3xl sm:text-6xl text-[#33cc99] font-medium' />
                 {/* </div> */}
 
                 <div className="flex-grow flex flex-col justify-start">
@@ -110,8 +110,9 @@ export default function FutureEcosystem() {
                   </p>
                 </div>
 
-                <div className="w-full mt-5 border rounded-md border-[#3df2a5]/80">
-                  <div className="w-full bg-[#030d17] border border-slate-800/80 rounded-lg py-1.5 text-xs sm:text-base font-medium text-[#3df2a5]/80 tracking-wide">
+                <div className="w-full  mt-5 max-w-40 border   rounded-md border-[#33cc99]/80">
+                  <div className="w-full  bg-[#030d17] border border-slate-800/80
+                   rounded-lg py-1.5 text-xs sm:text-base font-medium text-[#33cc99]/80 tracking-wide">
                     Coming Soon
                   </div>
                 </div>
@@ -128,8 +129,8 @@ export default function FutureEcosystem() {
                 key={index} 
                 className="flex items-center gap-4 px-2 sm:px-4 justify-start sm:justify-center md:border-r last:border-0 border-slate-800/60 lg:last:border-0"
               >
-                {/* <div className="w-12 h-12 shrink-0 rounded-xl bg-[#051422] border border-slate-800 flex items-center justify-center text-[#3df2a5]"> */}
-                  <stat.icon  className='text-2xl sm:text-4xl text-[#3df2a5] font-medium' />
+                {/* <div className="w-12 h-12 shrink-0 rounded-xl bg-[#051422] border border-slate-800 flex items-center justify-center text-[#33cc99]"> */}
+                  <stat.icon  className='text-2xl sm:text-4xl text-[#33cc99] font-medium' />
                 {/* </div> */}
                 <div className="flex flex-col">
                   <span className="text-xl sm:text-2xl font-bold text-slate-100 tracking-tight">

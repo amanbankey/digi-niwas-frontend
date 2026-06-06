@@ -16,26 +16,15 @@ import { BiHeadphone } from 'react-icons/bi';
 
 export default function DiginiwasWorks() {
   return (
-    <section className="min-h-screen bg-[#030a10] text-white px-4 py-12 md:py-20 flex flex-col justify-between font-sans selection:bg-emerald-500 selection:text-black">
+    <section className="min-h-screen bg-[#274255]  text-white px-4 py-5 sm:pb-20  flex flex-col justify-between font-sans selection:bg-emerald-500 selection:text-black">
       
-      {/* Top Header Area */}
       <div className="max-w-7xl mx-auto text-center mb-16 relative w-full">
         <div className="flex items-center justify-center gap-2 text-2xl md:text-4xl font-bold tracking-wide uppercase">
-          {/* Left Decorative Icon */}
-          <div className="hidden sm:flex items-center text-slate-800 opacity-40">
-            <HiOutlineUserGroup size={32} />
-            <HiOutlineHome size={24} className="-ml-2" />
-          </div>
-          
+         
           <h2>
-            HOW <span className="text-[#3df2a5]">DIGINIWAS</span> WORKS
+            HOW <span className="text-[#33cc99]">DIGINIWAS</span> WORKS
           </h2>
 
-          {/* Right Decorative Icon */}
-          <div className="hidden sm:flex items-center text-slate-800 opacity-40">
-            <HiOutlineHome size={24} className="-mr-2" />
-            <HiOutlineUserGroup size={32} />
-          </div>
         </div>
         
         <p className="text-slate-400 text-sm md:text-base mt-3 tracking-widest font-medium flex items-center justify-center gap-3">
@@ -46,23 +35,23 @@ export default function DiginiwasWorks() {
       </div>
 
       {/* 4 Step Workflow Cards Grid */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 relative w-full mb-16">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-16 sm:gap-8 relative w-full mb-16">
         
         {/* STEP 01 */}
-        <div className="bg-[#061520]/60 border border-slate-800/80 rounded-2xl p-6 flex flex-col items-center text-center relative backdrop-blur-sm group hover:border-[#3df2a5]/30 transition-all duration-300">
+        <div className="bg-[#061520]/60 border hover:scale-105  border-slate-800/80 rounded-2xl p-6 flex flex-col items-center text-center relative backdrop-blur-sm group hover:border-[#33cc99]/30 transition-all duration-300">
           <div className="absolute -top-6 bg-[#030a10] border border-slate-800 p-3 rounded-full text-xs font-semibold text-slate-400 tracking-wider">
             01
           </div>
           
-          <div className="w-20 h-20 bg-[#0a2233] rounded-full flex items-center justify-center text-[#3df2a5] mb-6 mt-2 relative border border-slate-700/50">
+          <div className="w-20 h-20 bg-[#0a2233] rounded-full flex items-center justify-center text-[#33cc99] mb-6 mt-2 relative border border-slate-700/50">
             <HiOutlineShieldCheck size={42} />
-            <span className="absolute bottom-1 right-1 bg-[#030a10] text-[#3df2a5] rounded-full p-0.5 border border-slate-700">
+            <span className="absolute bottom-1 right-1 bg-[#030a10] text-[#33cc99] rounded-full p-0.5 border border-slate-700">
               <HiOutlineShieldCheck size={14} />
             </span>
           </div>
 
           <h3 className="text-xl font-bold mb-3 tracking-tight">
-            We Onboard <br /><span className="text-[#3df2a5]">Verified</span> Agents
+            We Onboard <br /><span className="text-[#33cc99]">Verified</span> Agents
           </h3>
           
           <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
@@ -70,7 +59,7 @@ export default function DiginiwasWorks() {
           </p>
 
           <div className="w-full bg-[#04111a] border border-slate-800/60 rounded-xl p-3 flex items-center gap-3 text-left">
-            <HiOutlineShieldCheck className="text-[#3df2a5] shrink-0" size={20} />
+            <HiOutlineShieldCheck className="text-[#33cc99] shrink-0" size={20} />
             <div className="text-xs font-medium text-slate-300">
               KYC Verified <br />
               <span className="text-slate-500 font-normal">Trusted Professionals</span>
@@ -84,17 +73,17 @@ export default function DiginiwasWorks() {
         </div>
 
         {/* STEP 02 */}
-        <div className="bg-[#061520]/60 border border-slate-800/80 rounded-2xl p-6 flex flex-col items-center text-center relative backdrop-blur-sm group hover:border-[#3df2a5]/30 transition-all duration-300">
+        <div className="bg-[#061520]/60 border hover:scale-105 border-slate-800/80 rounded-2xl p-6 flex flex-col items-center text-center relative backdrop-blur-sm group hover:border-[#33cc99]/30 transition-all duration-300">
           <div className="absolute -top-6 bg-[#030a10] border border-slate-800 p-3  rounded-full text-xs font-semibold text-slate-400 tracking-wider">
             02
           </div>
 
-          <div className="w-20 h-20 bg-[#0a2233] rounded-full flex items-center justify-center text-[#3df2a5] mb-6 mt-2 border border-slate-700/50">
+          <div className="w-20 h-20 bg-[#0a2233] rounded-full flex items-center justify-center text-[#33cc99] mb-6 mt-2 border border-slate-700/50">
             <RiRobotLine size={40} />
           </div>
 
           <h3 className="text-xl font-bold mb-3 tracking-tight">
-            Use <span className="text-[#3df2a5]">Niwas AI</span> <br />for the Best
+            Use <span className="text-[#33cc99]">Niwas AI</span> <br />for the Best
           </h3>
 
           <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
@@ -117,17 +106,17 @@ export default function DiginiwasWorks() {
         </div>
 
         {/* STEP 03 */}
-        <div className="bg-[#061520]/60 border border-slate-800/80 rounded-2xl p-6 flex flex-col items-center text-center relative backdrop-blur-sm group hover:border-[#3df2a5]/30 transition-all duration-300">
+        <div className="bg-[#061520]/60 border hover:scale-105 border-slate-800/80 rounded-2xl p-6 flex flex-col items-center text-center relative backdrop-blur-sm group hover:border-[#33cc99]/30 transition-all duration-300">
           <div className="absolute -top-6 bg-[#030a10] border border-slate-800 p-3  rounded-full text-xs font-semibold text-slate-400 tracking-wider">
             03
           </div>
 
-          <div className="w-20 h-20 bg-[#0a2233] rounded-full flex items-center justify-center text-[#3df2a5] mb-6 mt-2 border border-slate-700/50">
+          <div className="w-20 h-20 bg-[#0a2233] rounded-full flex items-center justify-center text-[#33cc99] mb-6 mt-2 border border-slate-700/50">
             <FiUsers size={38} />
           </div>
 
           <h3 className="text-xl font-bold mb-3 tracking-tight">
-            Connect with <br /><span className="text-[#3df2a5]">Verified & Trusted</span> Agents
+            Connect with <br /><span className="text-[#33cc99]">Verified & Trusted</span> Agents
           </h3>
 
           <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
@@ -137,15 +126,15 @@ export default function DiginiwasWorks() {
           {/* Bullet Feature Set */}
           <div className="w-full space-y-2.5 text-left text-xs text-slate-300">
             <div className="flex items-center gap-3">
-              <RiUserVoiceLine size={16} className="text-[#3df2a5] shrink-0" />
+              <RiUserVoiceLine size={16} className="text-[#33cc99] shrink-0" />
               <span>Expert Guidance</span>
             </div>
             <div className="flex items-center gap-3">
-              <HiOutlineHome size={16} className="text-[#3df2a5] shrink-0" />
+              <HiOutlineHome size={16} className="text-[#33cc99] shrink-0" />
               <span>Local Market Knowledge</span>
             </div>
             <div className="flex items-center gap-3">
-              <HiOutlineShieldCheck size={16} className="text-[#3df2a5] shrink-0" />
+              <HiOutlineShieldCheck size={16} className="text-[#33cc99] shrink-0" />
               <span>End-to-End Support</span>
             </div>
           </div>
@@ -156,18 +145,18 @@ export default function DiginiwasWorks() {
         </div>
 
         {/* STEP 04 */}
-        <div className="bg-[#061520]/60 border border-slate-800/80 rounded-2xl p-6 flex flex-col items-center text-center relative backdrop-blur-sm group hover:border-[#3df2a5]/30 transition-all duration-300">
+        <div className="bg-[#061520]/60 border hover:scale-105 border-slate-800/80 rounded-2xl p-6 flex flex-col items-center text-center relative backdrop-blur-sm group hover:border-[#33cc99]/30 transition-all duration-300">
           <div className="absolute -top-6 bg-[#030a10] border border-slate-800 p-3 rounded-full text-xs font-semibold text-slate-400 tracking-wider">
             04
           </div>
 
-          <div className="w-20 h-20 bg-[#0a2233] rounded-full flex items-center justify-center text-[#3df2a5] mb-6 mt-2 border border-slate-700/50">
+          <div className="w-20 h-20 bg-[#0a2233] rounded-full flex items-center justify-center text-[#33cc99] mb-6 mt-2 border border-slate-700/50">
             {/* <HiOutlineArrowTrendingUp size={38} /> */}
            <GiHouse size={38}/>
           </div>
 
           <h3 className="text-xl font-bold mb-3 tracking-tight">
-            List Properties <br />& <span className="text-[#3df2a5]">Grow Digitally</span>
+            List Properties <br />& <span className="text-[#33cc99]">Grow Digitally</span>
           </h3>
 
           <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
@@ -177,19 +166,19 @@ export default function DiginiwasWorks() {
           {/* Action Bullet Features List */}
           <div className="w-full space-y-2.5 text-left text-xs text-slate-300">
             <div className="flex items-center gap-3">
-              <HiOutlineHome size={16} className="text-[#3df2a5] shrink-0" />
+              <HiOutlineHome size={16} className="text-[#33cc99] shrink-0" />
               <span>Easy Property Listing</span>
             </div>
             <div className="flex items-center gap-3">
-              <HiOutlineVolumeUp size={16} className="text-[#3df2a5] shrink-0" />
+              <HiOutlineVolumeUp size={16} className="text-[#33cc99] shrink-0" />
               <span>Digital Promotion</span>
             </div>
             <div className="flex items-center gap-3">
-              <HiOutlineVideoCamera size={16} className="text-[#3df2a5] shrink-0" />
+              <HiOutlineVideoCamera size={16} className="text-[#33cc99] shrink-0" />
               <span>Video & Photography</span>
             </div>
             <div className="flex items-center gap-3">
-              <HiOutlineChartBar size={16} className="text-[#3df2a5] shrink-0" />
+              <HiOutlineChartBar size={16} className="text-[#33cc99] shrink-0" />
               <span>Branding & Visibility</span>
             </div>
           </div>
@@ -198,32 +187,32 @@ export default function DiginiwasWorks() {
       </div>
 
       {/* Bottom Features Horizontal Bar Container */}
-      <div className="max-w-7xl mx-auto w-full border-t border-slate-800/80 pt-8 mt-4">
+      <div className="max-w-7xl mx-auto w-full  border-slate-800/80 ">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-center text-xs md:text-sm text-slate-400">
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 p-2">
-            <HiOutlineShieldCheck  className="text-2xl sm:text-4xl text-[#3df2a5] shrink-0" />
+            <HiOutlineShieldCheck  className="text-2xl sm:text-4xl text-[#33cc99] shrink-0" />
             <span className="font-medium text-slate-200">100% Verified Agents & Listings</span>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 p-2">
-            <RiRobotLine  className="text-2xl sm:text-4xl text-[#3df2a5] shrink-0" />
+            <RiRobotLine  className="text-2xl sm:text-4xl text-[#33cc99] shrink-0" />
             <span className="font-medium text-slate-200">AI Powered Smart Search</span>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 p-2">
-            <HiOutlineUserGroup  className="text-2xl sm:text-4xl text-[#3df2a5] shrink-0" />
+            <HiOutlineUserGroup  className="text-2xl sm:text-4xl text-[#33cc99] shrink-0" />
             <span className="font-medium text-slate-200">Happy Customers Everyday</span>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 p-2">
-            {/* <HiOutlineArrowTrendingUp  className="text-2xl sm:text-4xl text-[#3df2a5] shrink-0" /> */}
-            <GiHouse  className="text-2xl sm:text-4xl text-[#3df2a5] shrink-0"/>
+            {/* <HiOutlineArrowTrendingUp  className="text-2xl sm:text-4xl text-[#33cc99] shrink-0" /> */}
+            <GiHouse  className="text-2xl sm:text-4xl text-[#33cc99] shrink-0"/>
             <span className="font-medium text-slate-200">Grow Your Real Estate Business</span>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 p-2 col-span-2 md:col-span-1">
-            <BiHeadphone  className="text-2xl sm:text-4xl text-[#3df2a5] shrink-0" />
+            <BiHeadphone  className="text-2xl sm:text-4xl text-[#33cc99] shrink-0" />
             <span className="font-medium text-slate-200">Dedicated Support</span>
           </div>
 

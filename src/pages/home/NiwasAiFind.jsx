@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { FiHeart, FiChevronRight,FiChevronLeft,  
        FiHome,
     FiVideo, FiArrowRight, FiMessageCircle,  FiCheck,FiTarget,FiTrendingUp, FiUsers,
@@ -5,16 +6,18 @@ import { FiHeart, FiChevronRight,FiChevronLeft,
 import { FaBrain, FaRegClock,  FaInstagram, FaFacebook, FaWhatsapp, FaBullhorn } from "react-icons/fa";
 import { BiTargetLock } from "react-icons/bi";
 import { RiRobot2Line } from "react-icons/ri";
-import house1 from "../../assets/images/house3.jpeg";
-import house2 from "../../assets/images/house3.jpeg";
-import house3 from "../../assets/images/house3.jpeg";
-import house from "../../assets/images/house.jpeg";
-// import "../../";
+
+
+const bgImages = [
+  "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80",
+  "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1600&q=80",
+  "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1600&q=80",
+];
 
 const properties = [
-  { img: house1, title: "2BHK Modern Villa", sub: "Ambala City, Haryana", price: "₹28,500" },
-  { img: house2, title: "2BHK Apartment", sub: "Near Delhi Highway", price: "₹26,000" },
-  { img: house3, title: "2BHK Builder Floor", sub: "Ambala Cantt", price: "₹27,000" },
+  { img: 'https://res.cloudinary.com/dhuabv2it/image/upload/v1780736760/house1_rmtft8.jpg', title: "2BHK Modern Villa", sub: "Ambala City, Haryana", price: "₹28,500" },
+  { img: 'https://res.cloudinary.com/dhuabv2it/image/upload/v1780736760/house2_jhd68o.jpg', title: "2BHK Apartment", sub: "Near Delhi Highway", price: "₹26,000" },
+  { img: 'https://res.cloudinary.com/dhuabv2it/image/upload/v1780736762/house3_w1avuf.jpg', title: "2BHK Builder Floor", sub: "Ambala Cantt", price: "₹27,000" },
 ];
 const features = [
   { icon: FaBrain, t1: "Understands", t2: "Your Needs" },
@@ -31,9 +34,17 @@ const features = [
 
 
  function PropertyListing() {
-   ;
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % bgImages.length);
+    }, 3000);
+  
+    return () => clearInterval(interval);
+  }, []);
     return (
-      <section className="min-h-screen bg-[#0a1a1f] text-white px-4 sm:px-8 lg:px-14 py-12 lg:py-16">
+      <section className="min-h-screen bg-[#274255] text-white px-4 sm:px-8 lg:px-14 py-10">
         <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
           {/* LEFT */}
           <div>
@@ -46,7 +57,7 @@ const features = [
               </span>
             </div>
   
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05]">
+            <h2 className="text-4xl sm:text-5xl  font-bold leading-[1.05]">
               Property Daalo.
               <br />
               <span className="text-[#2dd4a8]">Reach Badhao.</span>
@@ -83,16 +94,21 @@ const features = [
           </div>
   
           {/* RIGHT */}
-          <div className="relative w-full aspect-square max-w-[640px] mx-auto">
-            {/* House image */}
-            <img
-              src={house}
+         
+         <div  className="relative w-full aspect-square max-w-[640px] mx-auto">
+         
+
+            <div> 
+               <img
+                key={currentImage}
+              src={bgImages[currentImage]}
               alt="House"
-              className="absolute inset-0 w-full h-full object-cover rounded-2xl"
+              className="absolute inset-0 w-full h-full object-cover  rounded-2xl transition-opacity duration-700"
             />
+            </div>
   
             {/* Phone mockup (left of house) */}
-            <div className="absolute left-2 sm:left-4 top-[38%] -translate-y-1/2 w-[110px] sm:w-[140px] md:w-[160px] rounded-[1.5rem] border-[5px] border-[#0a1418] bg-[#0d1f24] shadow-2xl overflow-hidden">
+            <div className="absolute left-2 sm:left-4 top-[65%] sm:top-[55%] -translate-y-1/2 w-[110px] sm:w-[140px] md:w-[160px] rounded-[1.5rem] border-[5px] border-[#0a1418] bg-[#0d1f24] shadow-2xl overflow-hidden">
               <div className="px-2 pt-2 pb-3">
                 <div className="flex items-center justify-between text-[8px] text-gray-400 mb-1">
                   <FiChevronLeft size={10} />
@@ -100,7 +116,7 @@ const features = [
                   <span />
                 </div>
                 <div className="rounded-lg overflow-hidden mb-2 border border-[#1f3a3f]">
-                  <img src={house} alt="" className="w-full h-12 sm:h-16 object-cover" />
+                  <img src={bgImages[currentImage]} alt="" className="w-full h-12 sm:h-16 object-cover" />
                 </div>
                 <div className="text-[9px] sm:text-[10px] text-[#2dd4a8] font-semibold">
                   Your Property
@@ -117,34 +133,49 @@ const features = [
             </div>
   
             {/* Social Media bubble - top center */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-3 sm:top-6 rounded-2xl border border-[#1f3a3f] bg-[#0a1a1f]/90 backdrop-blur px-3 py-2 sm:px-4 sm:py-3 w-[150px] sm:w-[180px]">
+            <div className="absolute left-1/3 -translate-x-1/2 top-3 sm:top-20 rounded-2xl border border-[#1f3a3f] bg-[#0a1a1f]/90 backdrop-blur px-3 py-2 sm:px-4 sm:py-3 w-[150px] sm:w-[180px]">
               <div className="flex items-center gap-2 mb-2">
-                <span className="w-5 h-5 rounded-full border border-[#2dd4a8] text-[#2dd4a8] flex items-center justify-center">
-                  <FiMessageCircle size={10} />
+                <span className="w-6 h-6 rounded-full border border-[#2dd4a8] text-[#2dd4a8] flex items-center justify-center">
+                  <FiMessageCircle size={16} />
                 </span>
-                <span className="text-[10px] sm:text-xs font-medium">
+                <span className="text-[0.7rem] sm:text-xs font-medium">
                   Social Media
                   <br />
                   Exposure
                 </span>
               </div>
-              <div className="flex items-center gap-2 justify-start">
-                <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-gradient-to-tr from-[#f09433] via-[#e6683c] to-[#bc1888] flex items-center justify-center text-white">
-                  <FaInstagram size={12} />
+              <div className="hidden sm:flex items-center gap-2 justify-start">
+                <span onClick={() =>
+                    window.open(
+                      "https://www.instagram.com/",
+                      "_blank"
+                    )
+                  } className="w-6 h-6 cursor-pointer sm:w-7 sm:h-7 rounded-full bg-gradient-to-tr from-[#f09433] via-[#e6683c] to-[#bc1888] flex items-center justify-center text-white">
+                  <FaInstagram size={16} />
                 </span>
-                <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#1877f2] flex items-center justify-center text-white">
-                  <FaFacebook size={12} />
+                <span onClick={() =>
+                    window.open(
+                      "https://www.facebook.com/",
+                      "_blank"
+                    )
+                  } className="w-6 h-6  cursor-pointer sm:w-7 sm:h-7 rounded-full bg-[#1877f2] flex items-center justify-center text-white">
+                  <FaFacebook size={16} />
                 </span>
-                <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#25d366] flex items-center justify-center text-white">
-                  <FaWhatsapp size={12} />
+                <span onClick={() =>
+                        window.open(
+                          "https://web.whatsapp.com/",
+                          "_blank"
+                        )
+                      } className="w-6 h-6 cursor-pointer sm:w-7 sm:h-7 rounded-full bg-[#25d366] flex items-center justify-center text-white">
+                  <FaWhatsapp size={16} />
                 </span>
               </div>
             </div>
   
             {/* Targeted Promotion - top right */}
-            <div className="absolute right-2 sm:right-4 top-[20%] rounded-xl border border-[#1f3a3f] bg-[#0a1a1f]/90 backdrop-blur px-3 py-2 flex items-center gap-2">
+            <div className="absolute right-2 sm:right-24 top-[20%] rounded-xl border border-[#1f3a3f] bg-[#0a1a1f]/90 backdrop-blur px-5 py-3  flex items-center gap-2">
               <span className="w-6 h-6 rounded-full border border-[#2dd4a8] text-[#2dd4a8] flex items-center justify-center">
-                <FiTarget size={12} />
+                <FiTarget size={16} />
               </span>
               <span className="text-[10px] sm:text-xs leading-tight">
                 Targeted
@@ -154,9 +185,9 @@ const features = [
             </div>
   
             {/* More Views - middle right */}
-            <div className="absolute right-2 sm:right-4 top-[45%] rounded-xl border border-[#1f3a3f] bg-[#0a1a1f]/90 backdrop-blur px-3 py-2 flex items-center gap-2">
+            <div className="absolute right-2 sm:right-10 top-[45%] rounded-xl border border-[#1f3a3f] bg-[#0a1a1f]/90 backdrop-blur px-5 py-3  flex items-center gap-2">
               <span className="w-6 h-6 text-[#2dd4a8] flex items-center justify-center">
-                <FiTrendingUp size={14} />
+                <FiTrendingUp size={20} />
               </span>
               <span className="text-[10px] sm:text-xs leading-tight">
                 More Views
@@ -166,9 +197,9 @@ const features = [
             </div>
   
             {/* Right Audience - bottom right */}
-            <div className="absolute right-2 sm:right-4 top-[68%] rounded-xl border border-[#1f3a3f] bg-[#0a1a1f]/90 backdrop-blur px-3 py-2 flex items-center gap-2">
+            <div className="absolute right-2 sm:right-4 top-[68%] rounded-xl border border-[#1f3a3f] bg-[#0a1a1f]/90 backdrop-blur px-5 py-3 flex items-center gap-2">
               <span className="w-6 h-6 text-[#2dd4a8] flex items-center justify-center">
-                <FiUsers size={14} />
+                <FiUsers size={20} />
               </span>
               <span className="text-[10px] sm:text-xs leading-tight">
                 Right Audience
@@ -177,17 +208,18 @@ const features = [
               </span>
             </div>
           </div>
+     
         </div>
       </section>
     );
   }
 export default function NiwasAIFinds() {
     return (
-      <section className="bg-[#0a1a1f] text-white px-4 sm:px-8 lg:px-14 py-12 lg:py-16">
+      <section className="bg-[#274255] text-white px-4 sm:px-8 lg:px-14 py-10 ">
         <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* LEFT */}
           <div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05]">
+            <h2 className="text-4xl sm:text-5xl font-bold leading-[1.05]">
               Niwas AI Finds
               <br />
               <span className="text-[#2dd4a8]">What You Need.</span>

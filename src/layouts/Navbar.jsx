@@ -6,6 +6,7 @@ import { LuLogOut } from "react-icons/lu";
 // import ProfileDropdown from "../components/ProfileDropdown";
 import { CgProfile } from "react-icons/cg";
 
+import  logo  from "../assets/images/logo.jpg";
 import { RxCross1 } from "react-icons/rx";
 
 const Navbar = ({show, setShow}) => {
@@ -30,23 +31,26 @@ const Navbar = ({show, setShow}) => {
 
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "Features ", path: "/#" },
-    { name: "Pricing", path: "/#" },
-    { name: "Resources", path: "/#" },
+    { name: "Explore Properties ", path: "/#" },
+    { name: "Niwas AI", path: "/#" },
+    { name: "Agent Corner", path: "/#" },
     { name: "About", path: "/#" },
-    { name: "Contact", path: "/#" },
+    // { name: "Contact", path: "/#" },
   ];
 
   return (
-    <div className="z-20 shadow-lg  sticky top-0">
+    <div className="z-50 shadow-lg  sticky top-0">
       <div className="">
-        <nav className="  mx-auto   bg-white/40  transparent  rounded-2xl   backdrop-blur-xl">
+        <nav className="  mx-auto   bg-white/80  transparent  rounded-2xl ">
           <div className="flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-10 h-[65px] sm:h-[70px] lg:h-[75px] max-w-screen-2xl mx-auto">
-            <NavLink to="/" className="flex-shrink-0 text-black duration-200">
+            <NavLink to="/" className="flex-shrink-0 flex items-center text-black duration-200">
+
+            <div className="flex items-center gap-1 justify-center  "> 
               <img
-                src={'logo'}
-                className="object-contain w-36 36"
+                src={'https://res.cloudinary.com/dhuabv2it/image/upload/v1780739165/logo-removebg-preview_sh6cxs.png'}
+                className="object-contain w-14  h-14  "
               />
+              <span className="text-[#274255] mt-4 text-sm font-semibold"> DIGINIWAS</span> </div>
             </NavLink>
 
             <div className="hidden lg:flex items-center gap-8 text-[16px] font-medium tracking-wide">
@@ -72,18 +76,18 @@ const Navbar = ({show, setShow}) => {
 
             <div className="flex items-center gap-2 sm:gap-3">
             {/* {!isLoggedIn && ( */}
-                <NavLink
+                {/* <NavLink
                   to="/admin-login"
                   className="hidden sm:block px-4 py-2  hover:bg-[#0A2540] hover:text-white border border-[#0A2540]   text-[#0A2540]  rounded-lg cursor-pointer "
                 >
                   Login
-                </NavLink>
+                </NavLink> */}
               {/* )} */}
 
               {/* {!isLoggedIn && ( */}
               <button  
                             onClick={() => navigate('/signup')}
-                            className="hidden sm:block px-4 py-2 bg-[#0A2540]  text-white rounded-lg cursor-pointer"
+                            className="hidden sm:block px-4 py-2 bg-[#274255]  text-white rounded-lg cursor-pointer"
                             >
                             Get Started
                             </button>
@@ -136,7 +140,7 @@ const Navbar = ({show, setShow}) => {
             ].join(" ")}
           >
             <div className="flex flex-col px-6 py-4 gap-4 text-[15px] font-medium border-t border-gray-100">
-              {navItems.map((item, index) => (
+              {navItems.map((item, index) => ( <div key={index}> 
               <NavLink 
                 to={item.path}
                 onClick={() => setMobileMenuOpen(false)}
@@ -152,16 +156,16 @@ const Navbar = ({show, setShow}) => {
                     {item.name}
                   </span>
                 )}
-              </NavLink> ))}              
+              </NavLink></div> ))}              
 
 
               <div className="flex flex-col items-start gap-3 mb-1 ">
-                <button
+                {/* <button
                   className="hover:text-white text-[#30A2540] bg-white  hover:bg-[#0A2540] border border-[#0A2540] px-3 py-2  rounded-lg "
                   onClick={onDashboard}
                 >
                   Dashboard
-                </button>
+                </button> */}
 
                 {isLoggedIn && (
                   <button
@@ -181,7 +185,7 @@ const Navbar = ({show, setShow}) => {
                     setMobileMenuOpen((prev) => !prev);
                   }}
                   to="/signup"
-                  className="sm:hidden w-40 text-center block  px-4 py-2 bg-[#0A2540] hover:bg-[#0A2540] text-white rounded-lg  cursor-pointer"
+                  className="sm:hidden w-40 text-center block  px-4 py-2 bg-[#274255]   text-white rounded-lg  cursor-pointer"
                 >
                   Get Started
                 </NavLink>

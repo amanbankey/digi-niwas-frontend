@@ -18,6 +18,8 @@ import {
     FiVideo,
     FiEye,
   } from "react-icons/fi";
+  import mobile from "../../assets/images/mobile.png";
+  import laptop from "../../assets/images/laptop.jpg";
 
   const stats = [
     { label: "Total Leads", value: "128", delta: "+18% this week" },
@@ -57,16 +59,7 @@ import {
   ];
   const weekBars = [40, 60, 50, 70, 55, 90, 75];
   const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-//   function HouseLogo({ size }) {
-//     return (
-//       <span
-//         className="inline-flex items-center justify-center rounded-md border border-mint/60 text-mint"
-//         style={{ width: size + 10, height: size + 10 }}
-//       >
-//         <FiHome size={size} />
-//       </span>
-//     );
-//   }
+
   function Sparkline() {
     return (
       <svg viewBox="0 0 300 100" className="w-full h-28" preserveAspectRatio="none">
@@ -302,19 +295,19 @@ import {
 
  function AgentDashboard() {
     return (
-      <section   className="min-h-screen bg-slate-950 text-white px-2  py-12 lg:py-20">
-        <div className="max-w-[1420px] mx-auto grid grid-cols-1 xl:grid-cols-12 gap-4 items-start">
-          <div className="xl:col-span-4">
+      <section   className="min-h-screen bg-[#274255] text-white px-5  py-10">
+        <div className="max-w-[1420px] mx-auto grid grid-cols-1 xl:grid-cols-12 gap-4 items-center">
+          <div className="xl:col-span-4 space-y-10">
             <div className="flex items-center gap-3 mb-6">
               <span className="w-12 h-12 rounded-lg border border-mint/60 text-emerald-400 flex items-center justify-center font-semibold">
                 06
               </span>
-              <span className="text-emerald-400 tracking-[0.2em] text-sm font-medium">AGENT DASHBOARD</span>
+              <span className="text-[#33cc99] tracking-[0.2em] text-sm font-medium">AGENT DASHBOARD</span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold leading-tight">
               Everything You Need,
               <br />
-              <span className="text-emerald-400">All in One Dashboard.</span>
+              <span className="text-[#33cc99]">All in One Dashboard.</span>
             </h2>
             <p className="text-slate-400 mt-5 max-w-md text-sm sm:text-base leading-relaxed">
               Manage leads, track performance, handle listings and grow your real estate business effortlessly.
@@ -336,10 +329,12 @@ import {
           <div className="xl:col-span-8 w-full">
             <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-4">
               <div className="flex-1 w-full">
-                <LaptopMockup />
+                {/* <LaptopMockup /> */}
+                <img src={'https://res.cloudinary.com/dhuabv2it/image/upload/v1780736764/laptop_ichles.png'} className="w-full h-full" />
               </div>
               <div className="shrink-0">
-                <PhoneMockup />
+                {/* <PhoneMockup /> */}
+                <img src={'https://res.cloudinary.com/dhuabv2it/image/upload/v1780736764/mobile_inin1j.png'}  className="sm:w-full w-96 h-1/2 sm:h-4/5" />
               </div>
             </div>
           </div>
