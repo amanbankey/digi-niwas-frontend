@@ -148,8 +148,6 @@ function LeftContent() {
 
 function RightPhones() {
 
-  // const [first, setfirst] = useState(0);
-
   return (
     <div className="flex-1 hidden md:flex flex-col items-center lg:items-end  w-full lg:max-w-[55%]  ">
       {/* <div className="flex items-end justify-center gap-2 w-full">

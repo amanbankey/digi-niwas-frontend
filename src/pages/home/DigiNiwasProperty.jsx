@@ -334,7 +334,7 @@ import {
               </div>
               <div className="shrink-0">
                 {/* <PhoneMockup /> */}
-                <img src={'https://res.cloudinary.com/dhuabv2it/image/upload/v1780736764/mobile_inin1j.png'}  className="sm:w-full w-96 h-1/2 sm:h-4/5" />
+                <img src={'https://res.cloudinary.com/dhuabv2it/image/upload/v1780736764/mobile_inin1j.png'}  className="sm:w-full w-60 h-1/2 sm:h-4/5" />
               </div>
             </div>
           </div>
