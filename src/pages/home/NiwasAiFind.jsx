@@ -6,7 +6,7 @@ import { FiHeart, FiChevronRight,FiChevronLeft,
 import { FaBrain, FaRegClock,  FaInstagram, FaFacebook, FaWhatsapp, FaBullhorn } from "react-icons/fa";
 import { BiTargetLock } from "react-icons/bi";
 import { RiRobot2Line } from "react-icons/ri";
-
+import homelogo from '../../assets/images/homelogo.png'
 
 const bgImages = [
   "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80",
@@ -44,13 +44,13 @@ const features = [
     return () => clearInterval(interval);
   }, []);
     return (
-      <section className="min-h-screen bg-[#274255] text-white px-4 sm:px-8 lg:px-14 py-10">
+      <section className="sm:min-h-screen bg-[#274255] text-white pt-20 px-4 sm:px-8 lg:px-14 sm:py-10">
         <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
           {/* LEFT */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <span className="w-11 h-11 rounded-lg border border-[#2dd4a8]/60 text-[#2dd4a8] flex items-center justify-center text-sm font-semibold">
-                05
+              <span className="w-12 h-12 rounded-lg border border-[#2dd4a8]/60 text-[#2dd4a8] flex items-center justify-center text-sm font-semibold">
+                <img src={homelogo} className="" />
               </span>
               <span className="text-[#2dd4a8] tracking-[0.2em] text-xs sm:text-sm font-medium">
                 LIST YOUR PROPERTY
@@ -215,8 +215,8 @@ const features = [
   }
 export default function NiwasAIFinds() {
     return (
-      <section className="bg-[#274255] text-white px-4 sm:px-8 lg:px-14 py-10 ">
-        <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <section className="bg-[#274255] text-white px-8 py-10 sm:px-10 xl:px-14 lg:py-10 ">
+        <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 sm:pb-10 lg:pb-20 xl:pb-32 lg:pt-5 gap-10 items-center">
           {/* LEFT */}
           <div>
             <h2 className="text-4xl sm:text-5xl font-bold leading-[1.05]">

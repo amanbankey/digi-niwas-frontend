@@ -51,7 +51,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className="min-h-screen font-sans bg-[#0d1b2a] text-white">
+    <div className="sm:min-h-screen h-full font-sans bg-[#0d1b2a] text-white">
       {/* <Navbar /> */}
       <Hero currentBg={currentBg} fade={fade} />
     </div>
@@ -60,7 +60,7 @@ export default function HeroSection() {
 
 function Hero({ currentBg, fade }) {
   return (
-    <section className="relative min-h-screen overflow-hidden ">
+    <section className="relative sm:min-h-screen overflow-hidden py-5 sm:py-0 px-5">
       <div
         className="absolute inset-0 bg-cover bg-center transition-opacity duration-500"
         style={{
@@ -70,7 +70,7 @@ function Hero({ currentBg, fade }) {
       />
       <div className="absolute inset-0 bg-[#274255]" />
       <div className=" ">
-        <div className="relative z-10 flex flex-col min-h-screen sm:py-10 ">
+        <div className="relative z-10 flex flex-col sm:min-h-screen sm:py-10 ">
           <div className="flex-1 flex flex-col lg:flex-row items-center justify-between px-4 sm:px-6 lg:px-10 xl:px-14 pt-8 sm:pt-12 lg:pt-16 pb-6 gap-8 lg:gap-4">
             <LeftContent />
             <RightPhones />

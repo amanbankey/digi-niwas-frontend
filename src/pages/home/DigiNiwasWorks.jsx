@@ -13,17 +13,24 @@ import { GiHouse } from "react-icons/gi";
 import { RiRobotLine, RiUserVoiceLine } from 'react-icons/ri';
 import { FiUsers, FiArrowRight } from 'react-icons/fi';
 import { BiHeadphone } from 'react-icons/bi';
+import homelogo from '../../assets/images/homelogo.png'
 
 export default function DiginiwasWorks() {
   return (
-    <section className="min-h-screen bg-[#274255]  text-white px-4 py-5 sm:pb-20  flex flex-col justify-between font-sans selection:bg-emerald-500 selection:text-black">
+    <section className="min-h-screen bg-[#274255]  text-white px-10 py-5 sm:pb-20  flex flex-col justify-between font-sans selection:bg-emerald-500 selection:text-black">
       
       <div className="max-w-7xl mx-auto text-center mb-16 relative w-full">
-        <div className="flex items-center justify-center gap-2 text-2xl md:text-4xl font-bold tracking-wide uppercase">
-         
-          <h2>
+        <div className="flex items-center justify-evenly gap-2 text-2xl md:text-4xl font-bold tracking-wide uppercase">
+          <div>
+          <img src={homelogo} className='sm:h-40 lg:h-48' />
+          </div>
+          <div> <h2>
             HOW <span className="text-[#33cc99]">DIGINIWAS</span> WORKS
-          </h2>
+          </h2> </div>
+         
+         <div>
+          <img src={homelogo} className='sm:h-40 lg:h-48' />
+         </div>
 
         </div>
         

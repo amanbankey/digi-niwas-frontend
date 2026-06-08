@@ -20,7 +20,7 @@ import {
   } from "react-icons/fi";
   import mobile from "../../assets/images/mobile.png";
   import laptop from "../../assets/images/laptop.jpg";
-
+  import homelogo from '../../assets/images/homelogo.png'
   const stats = [
     { label: "Total Leads", value: "128", delta: "+18% this week" },
     { label: "New Leads", value: "24", delta: "+12% this week" },
@@ -295,12 +295,12 @@ import {
 
  function AgentDashboard() {
     return (
-      <section   className="min-h-screen bg-[#274255] text-white px-5  py-10">
+      <section   className="min-h-screen bg-[#274255] text-white  px-10 py-10">
         <div className="max-w-[1420px] mx-auto grid grid-cols-1 xl:grid-cols-12 gap-4 items-center">
           <div className="xl:col-span-4 space-y-10">
             <div className="flex items-center gap-3 mb-6">
               <span className="w-12 h-12 rounded-lg border border-mint/60 text-emerald-400 flex items-center justify-center font-semibold">
-                06
+                <img src={homelogo} className="" />
               </span>
               <span className="text-[#33cc99] tracking-[0.2em] text-sm font-medium">AGENT DASHBOARD</span>
             </div>
@@ -326,7 +326,7 @@ import {
               ))}
             </div>
           </div>
-          <div className="xl:col-span-8 w-full">
+          <div className="xl:col-span-8 w-full pt-10 sm:pt-4">
             <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-4">
               <div className="flex-1 w-full">
                 {/* <LaptopMockup /> */}

@@ -8,7 +8,7 @@ import {
 //   HiOutlineWrench
 } from 'react-icons/hi';
 // import { HiOutlineWrench } from "react-icons/hi";
-
+import homelogo from '../../assets/images/homelogo.png'
 // import { HiWrench } from "react-icons/hi";
 import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
 
@@ -61,15 +61,15 @@ const statsData = [
 
 export default function FutureEcosystem() {
   return (
-    <section className="min-h-screen bg-[#274255] text-white px-4 py-8 flex flex-col justify-center items-center font-sans antialiased selection:bg-[#33cc99] selection:text-black">
+    <section className="min-h-screen bg-[#274255] text-white px-10 py-8 pb-14 sm:pb-16 flex flex-col justify-center items-center font-sans antialiased selection:bg-[#33cc99] selection:text-black">
       <div className="w-full max-w-[1440px] bg-[#040f1a] border border-slate-900 rounded-2xl p-6 sm:p-8  shadow-2xl flex flex-col gap-10">
         
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-center">
           
           <div className="xl:col-span-4 flex flex-col items-start space-y-4">
             <div className="flex items-center gap-2.5">
-              <span className="w-10 h-10 rounded-xl border border-[#33cc99]/40 text-[#33cc99] flex items-center justify-center font-bold text-lg bg-[#051625]">
-                07
+              <span className="w-12 h-12 rounded-xl border border-[#33cc99]/40 text-[#33cc99] flex items-center justify-center font-bold text-lg bg-[#051625]">
+                <img src={homelogo} className="" />
               </span>
               <span className="text-[#33cc99] tracking-[0.2em] text-xs sm:text-sm font-semibold uppercase">
                 FUTURE ECOSYSTEM

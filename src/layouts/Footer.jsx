@@ -1,5 +1,6 @@
 import React from 'react'
 import { BsStars, BsTwitterX, BsLinkedin, BsFacebook, BsInstagram } from "react-icons/bs";
+import { NavLink } from 'react-router-dom';
 
 const footerLinks = {
     Product: ["Features", "Pricing", "Use Cases", "Integrations", "API"],
@@ -15,12 +16,16 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row justify-between gap-20 mb-10 ">
           <div className="col-span-2 sm:col-span-3 lg:col-span-1 w-full sm:w-60  ">
             <div className=' w-full '> 
-            <div className='w-14 h-10 flex items-center gap-2 mb-2 '> 
-              <img src='https://res.cloudinary.com/dhuabv2it/image/upload/v1780739847/DIGINIWAS_FINAL_page-2-removebg-preview_o3fesd.png' />
-             <h3 className="text-white font-bold text-lg sm:text-xl mt-3 whitespace-nowrap ">
-               Digi Niwas <sup className="text-xs ">™</sup>
-            </h3>
-            </div>
+
+             <NavLink to="/" className="flex-shrink-0 flex items-center text-black duration-200">
+            
+              <div className="flex items-center gap-1 justify-center  "> 
+                 <img
+                   src={' https://res.cloudinary.com/dhuabv2it/image/upload/v1780739847/DIGINIWAS_FINAL_page-2-removebg-preview_o3fesd.png'}
+                   className="object-contain w-17  h-16  "
+                          />
+                           </div>
+               </NavLink>
            
              <div className=''>  <p className="text-gray-400 text-sm sm:text-sm leading-relaxed mb-4">
               AI-Powered Trade & Logistics Intelligence Platform
