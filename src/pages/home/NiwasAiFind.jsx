@@ -173,7 +173,7 @@ const features = [
             </div>
   
             {/* Targeted Promotion - top right */}
-            <div className="absolute right-2 sm:right-24 top-[20%] rounded-xl border border-[#1f3a3f] bg-[#0a1a1f]/90 backdrop-blur px-5 py-3  flex items-center gap-2">
+            <div className="absolute right-2 sm:right-24 top-[25%] rounded-xl border border-[#1f3a3f] bg-[#0a1a1f]/90 backdrop-blur px-5 py-3  flex items-center gap-2">
               <span className="w-6 h-6 rounded-full border border-[#2dd4a8] text-[#2dd4a8] flex items-center justify-center">
                 <FiTarget size={16} />
               </span>
@@ -185,7 +185,7 @@ const features = [
             </div>
   
             {/* More Views - middle right */}
-            <div className="absolute right-2 sm:right-10 top-[45%] rounded-xl border border-[#1f3a3f] bg-[#0a1a1f]/90 backdrop-blur px-5 py-3  flex items-center gap-2">
+            <div className="absolute right-2 sm:right-10 top-[50%] rounded-xl border border-[#1f3a3f] bg-[#0a1a1f]/90 backdrop-blur px-5 py-3  flex items-center gap-2">
               <span className="w-6 h-6 text-[#2dd4a8] flex items-center justify-center">
                 <FiTrendingUp size={20} />
               </span>
@@ -197,7 +197,7 @@ const features = [
             </div>
   
             {/* Right Audience - bottom right */}
-            <div className="absolute right-2 sm:right-4 top-[68%] rounded-xl border border-[#1f3a3f] bg-[#0a1a1f]/90 backdrop-blur px-5 py-3 flex items-center gap-2">
+            <div className="absolute right-2 sm:right-4 top-[75%] rounded-xl border border-[#1f3a3f] bg-[#0a1a1f]/90 backdrop-blur px-5 py-3 flex items-center gap-2">
               <span className="w-6 h-6 text-[#2dd4a8] flex items-center justify-center">
                 <FiUsers size={20} />
               </span>

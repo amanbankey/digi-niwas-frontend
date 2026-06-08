@@ -604,7 +604,7 @@ export default function IphoneSection() {
 
   return (
     <div
-      className="w-full flex items-center pt-48 pb-28 mb-20 justify-center overflow-hidden"
+      className="w-full flex items-center  sm:pt-48 sm:pb-28 mb-20 justify-center overflow-hidden"
       style={{
         background: "#274255",
         minHeight: "700px",

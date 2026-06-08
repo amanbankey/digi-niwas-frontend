@@ -293,7 +293,7 @@ export default function IndiaMap() {
   }
 
   return (
-    <div className="w-full min-h-[600px] flex flex-col lg:flex-row gap-4 px-4 lg:px-6 mt-10">
+    <div className="w-full min-h-[600px] flex flex-col lg:flex-row gap-4 px-8 lg:px-6 mt-10">
       
       {/* MAP */}
       <div className="w-full lg:w-[60%] h-[300px] sm:h-[400px] lg:h-[600px] rounded-2xl overflow-hidden border shadow-lg z-0">

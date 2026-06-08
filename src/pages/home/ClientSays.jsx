@@ -31,7 +31,7 @@ const testimonials = [
 export default function ClientSays() {
   const navigate = useNavigate()
   return (
-    <section className="w-full bg-[#f7f8fa] py-14 sm:py-16 md:py-20 lg:py-28 overflow-hidden">
+    <section className="w-full bg-[#f7f8fa]  px-4 sm:px-0 py-14 sm:py-16 md:py-20 lg:py-28 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
         <div className="text-center mb-10 sm:mb-12 lg:mb-16">
           <p className="text-[#16836E] text-[11px] sm:text-xs md:text-sm font-semibold tracking-[0.25em] uppercase mb-3">

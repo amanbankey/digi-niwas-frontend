@@ -14,6 +14,9 @@ import { RiRobotLine, RiUserVoiceLine } from 'react-icons/ri';
 import { FiUsers, FiArrowRight } from 'react-icons/fi';
 import { BiHeadphone } from 'react-icons/bi';
 import homelogo from '../../assets/images/homelogo.png'
+import robot from '../../assets/images/robot.png'
+import Background from '../../assets/images/Background.png'
+import grow from '../../assets/images/grow.png'
 
 export default function DiginiwasWorks() {
   return (
@@ -21,14 +24,14 @@ export default function DiginiwasWorks() {
       
       <div className="max-w-7xl mx-auto text-center mb-16 relative w-full">
         <div className="flex items-center justify-evenly gap-2 text-2xl md:text-4xl font-bold tracking-wide uppercase">
-          <div>
+          <div  className='hidden sm:block'>
           <img src={homelogo} className='sm:h-40 lg:h-48' />
           </div>
-          <div> <h1 >
-            HOW <span className="text-[#33cc99]">DIGINIWAS</span> WORKS
+          <div> <h1 className=' '>
+            HOW <span className="text-[#33cc99] ">DIGINIWAS</span> WORKS
           </h1> </div>
          
-         <div>
+         <div className='hidden sm:block'>
           <img src={homelogo} className='sm:h-40 lg:h-48' />
          </div>
 
@@ -50,18 +53,19 @@ export default function DiginiwasWorks() {
             01
           </div>
           
-          <div className="w-20 h-20 bg-[#0a2233] rounded-full flex items-center justify-center text-[#33cc99] mb-6 mt-2 relative border border-slate-700/50">
-            <HiOutlineShieldCheck size={42} />
-            <span className="absolute bottom-1 right-1 bg-[#030a10] text-[#33cc99] rounded-full p-0.5 border border-slate-700">
+          <div className="   flex items-center justify-center text-[#33cc99] mb-6 mt-5 relative   border-slate-700/50">
+            {/* <HiOutlineShieldCheck size={42} /> */}
+            <img src={Background} />
+            {/* <span className="absolute bottom-1 right-1 bg-[#030a10] text-[#33cc99] rounded-full p-0.5 border border-slate-700">
               <HiOutlineShieldCheck size={14} />
-            </span>
+            </span> */}
           </div>
 
           <h3 className="text-xl font-bold mb-3 tracking-tight">
             We Onboard <br /><span className="text-[#33cc99]">Verified</span> Agents
           </h3>
           
-          <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+          <p className="text-slate-400 text-sm leading-relaxed mb-2 flex-grow">
             Every agent goes through onboarding and KYC verification to ensure a trusted network for our customers.
           </p>
 
@@ -85,15 +89,16 @@ export default function DiginiwasWorks() {
             02
           </div>
 
-          <div className="w-20 h-20 bg-[#0a2233] rounded-full flex items-center justify-center text-[#33cc99] mb-6 mt-2 border border-slate-700/50">
-            <RiRobotLine size={40} />
+          <div className="  flex items-center justify-center text-[#33cc99] mb-6 mt-2  r border-slate-700/50">
+            {/* <RiRobotLine size={40} /> */}
+            <img src={robot} />
           </div>
 
           <h3 className="text-xl font-bold mb-3 tracking-tight">
             Use <span className="text-[#33cc99]">Niwas AI</span> <br />for the Best
           </h3>
 
-          <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+          <p className="text-slate-400 text-sm leading-relaxed mb-3  flex-grow">
             Niwas AI understands your needs and provides smart recommendations to help you find the best properties.
           </p>
 
@@ -118,8 +123,9 @@ export default function DiginiwasWorks() {
             03
           </div>
 
-          <div className="w-20 h-20 bg-[#0a2233] rounded-full flex items-center justify-center text-[#33cc99] mb-6 mt-2 border border-slate-700/50">
-            <FiUsers size={38} />
+          <div className="  flex items-center justify-center text-[#33cc99] mb-6 mt-2   border-slate-700/50">
+            {/* <FiUsers size={38} /> */}
+            <img src={homelogo} className='w-56 h-44' />
           </div>
 
           <h3 className="text-xl font-bold mb-3 tracking-tight">
@@ -157,9 +163,10 @@ export default function DiginiwasWorks() {
             04
           </div>
 
-          <div className="w-20 h-20 bg-[#0a2233] rounded-full flex items-center justify-center text-[#33cc99] mb-6 mt-2 border border-slate-700/50">
+          <div className="   flex items-center justify-center text-[#33cc99] mb-6 mt-2   border-slate-700/50">
             {/* <HiOutlineArrowTrendingUp size={38} /> */}
-           <GiHouse size={38}/>
+           {/* <GiHouse size={38}/> */}
+           <img src={grow} className='' />
           </div>
 
           <h3 className="text-xl font-bold mb-3 tracking-tight">
@@ -194,7 +201,7 @@ export default function DiginiwasWorks() {
       </div>
 
       {/* Bottom Features Horizontal Bar Container */}
-      <div className="max-w-7xl mx-auto w-full  border-slate-800/80 ">
+      <div className="max-w-7xl mx-auto w-full  border-slate-800/80  pt-16  ">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-center text-xs md:text-sm text-slate-400">
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 p-2">
