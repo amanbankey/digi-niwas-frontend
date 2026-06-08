@@ -24,9 +24,9 @@ export default function DiginiwasWorks() {
           <div>
           <img src={homelogo} className='sm:h-40 lg:h-48' />
           </div>
-          <div> <h2>
+          <div> <h1 >
             HOW <span className="text-[#33cc99]">DIGINIWAS</span> WORKS
-          </h2> </div>
+          </h1> </div>
          
          <div>
           <img src={homelogo} className='sm:h-40 lg:h-48' />
