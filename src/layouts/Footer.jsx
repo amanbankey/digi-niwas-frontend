@@ -3,7 +3,7 @@ import { BsStars, BsTwitterX, BsLinkedin, BsFacebook, BsInstagram } from "react-
 import { NavLink } from 'react-router-dom';
 
 const footerLinks = {
-    Product: ["Features", "Pricing", "Use Cases", "Integrations", "API"],
+    Links: ["The Collection", "Agent Portal", "Intelligence", "Privacy", "Terms","Contact" ],
     Company: ["About us", "Careers", "Blog", "Press", "Contact"],
     Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy", "GDPR", "Compliance"],
     // Resources: ["Help Center", "Documentation", "Community", "Webinars", "Partners"],
@@ -24,11 +24,12 @@ const Footer = () => {
                    src={' https://res.cloudinary.com/dhuabv2it/image/upload/v1780739847/DIGINIWAS_FINAL_page-2-removebg-preview_o3fesd.png'}
                    className="object-contain w-17  h-16  "
                           />
-                           </div>
+                 </div>
                </NavLink>
            
-             <div className=''>  <p className="text-gray-400 text-sm sm:text-sm leading-relaxed mb-4">
-              AI-Powered Trade & Logistics Intelligence Platform
+             <div className='mt-2'>
+                <p className="text-gray-400 text-sm sm:text-sm leading-relaxed mb-4">
+             Elevated Living, Redefined. India's first digital-first luxury property ecosystem.
             </p></div>
             </div>
             <div className="flex items-center gap-3">
@@ -63,7 +64,7 @@ const Footer = () => {
  
         <div className="border-t border-gray-700 pt-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div>  <p className="text-gray-400 text-sm text-center sm:text-left">
-            2026 Digi niwas  . All rights reserved
+            2026 Digi niwas. All rights reserved
           </p> </div>
         
           <div className="flex items-center gap-4">

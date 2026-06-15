@@ -48,7 +48,13 @@ export default function DiginiwasWorks() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-16 sm:gap-8 relative w-full mb-16">
         
         {/* STEP 01 */}
-        <div className="bg-[#061520]/60 border hover:scale-105  border-slate-800/80 rounded-2xl p-6 flex flex-col items-center text-center relative backdrop-blur-sm group hover:border-[#33cc99]/30 transition-all duration-300">
+        <div  onClick={() =>
+    document.getElementById("agent")
+      ?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+  }  className="bg-[#061520]/60 border hover:scale-105  border-slate-800/80 rounded-2xl p-6 flex flex-col items-center text-center relative backdrop-blur-sm group hover:border-[#33cc99]/30 transition-all duration-300">
           <div className="absolute -top-6 bg-[#030a10] border border-slate-800 p-3 rounded-full text-xs font-semibold text-slate-400 tracking-wider">
             01
           </div>
@@ -84,7 +90,14 @@ export default function DiginiwasWorks() {
         </div>
 
         {/* STEP 02 */}
-        <div className="bg-[#061520]/60 border hover:scale-105 border-slate-800/80 rounded-2xl p-6 flex flex-col items-center text-center relative backdrop-blur-sm group hover:border-[#33cc99]/30 transition-all duration-300">
+        <div  onClick={() =>
+    document.getElementById("niwas-ai")
+      ?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+  }
+  className="bg-[#061520]/60 border hover:scale-105 border-slate-800/80 rounded-2xl p-6 flex flex-col items-center text-center relative backdrop-blur-sm group hover:border-[#33cc99]/30 transition-all duration-300">
           <div className="absolute -top-6 bg-[#030a10] border border-slate-800 p-3  rounded-full text-xs font-semibold text-slate-400 tracking-wider">
             02
           </div>
@@ -118,7 +131,13 @@ export default function DiginiwasWorks() {
         </div>
 
         {/* STEP 03 */}
-        <div className="bg-[#061520]/60 border hover:scale-105 border-slate-800/80 rounded-2xl p-6 flex flex-col items-center text-center relative backdrop-blur-sm group hover:border-[#33cc99]/30 transition-all duration-300">
+        <div  onClick={() =>
+    document.getElementById("future")
+      ?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+  }  className="bg-[#061520]/60 border hover:scale-105 border-slate-800/80 rounded-2xl p-6 flex flex-col items-center text-center relative backdrop-blur-sm group hover:border-[#33cc99]/30 transition-all duration-300">
           <div className="absolute -top-6 bg-[#030a10] border border-slate-800 p-3  rounded-full text-xs font-semibold text-slate-400 tracking-wider">
             03
           </div>
@@ -158,7 +177,13 @@ export default function DiginiwasWorks() {
         </div>
 
         {/* STEP 04 */}
-        <div className="bg-[#061520]/60 border hover:scale-105 border-slate-800/80 rounded-2xl p-6 flex flex-col items-center text-center relative backdrop-blur-sm group hover:border-[#33cc99]/30 transition-all duration-300">
+        <div onClick={() =>
+    document.getElementById("list-property")
+      ?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+  } className="bg-[#061520]/60 border hover:scale-105 border-slate-800/80 rounded-2xl p-6 flex flex-col items-center text-center relative backdrop-blur-sm group hover:border-[#33cc99]/30 transition-all duration-300">
           <div className="absolute -top-6 bg-[#030a10] border border-slate-800 p-3 rounded-full text-xs font-semibold text-slate-400 tracking-wider">
             04
           </div>
@@ -201,33 +226,33 @@ export default function DiginiwasWorks() {
       </div>
 
       {/* Bottom Features Horizontal Bar Container */}
-      <div className="max-w-7xl mx-auto w-full  border-slate-800/80  pt-16  ">
+      <div className="max-w-7xl mx-auto w-full  border-slate-800/80 pt-1 lg:pt-20  mb-1 sm:mb-3 ">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-center text-xs md:text-sm text-slate-400">
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 p-2">
-            <HiOutlineShieldCheck  className="text-2xl sm:text-4xl text-[#33cc99] shrink-0" />
-            <span className="font-medium text-slate-200">100% Verified Agents & Listings</span>
+            <HiOutlineShieldCheck  className="text-4xl sm:text-4xl md:text-5xl text-[#33cc99] shrink-0" />
+            <span className="font-medium   lg:text-lg text-slate-200">100% Verified Agents & Listings</span>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 p-2">
-            <RiRobotLine  className="text-2xl sm:text-4xl text-[#33cc99] shrink-0" />
-            <span className="font-medium text-slate-200">AI Powered Smart Search</span>
+            <RiRobotLine  className="text-4xl  sm:text-4xl  md:text-5xl text-[#33cc99] shrink-0" />
+            <span className="font-medium   sm:text-base lg:text-lg text-slate-200">AI Powered Smart Search</span>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 p-2">
-            <HiOutlineUserGroup  className="text-2xl sm:text-4xl text-[#33cc99] shrink-0" />
-            <span className="font-medium text-slate-200">Happy Customers Everyday</span>
+            <HiOutlineUserGroup  className="text-4xl  sm:text-4xl  md:text-5xl text-[#33cc99] shrink-0" />
+            <span className="font-medium   sm:text-base lg:text-lg text-slate-200">Happy Customers Everyday</span>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 p-2">
-            {/* <HiOutlineArrowTrendingUp  className="text-2xl sm:text-4xl text-[#33cc99] shrink-0" /> */}
-            <GiHouse  className="text-2xl sm:text-4xl text-[#33cc99] shrink-0"/>
-            <span className="font-medium text-slate-200">Grow Your Real Estate Business</span>
+            {/* <HiOutlineArrowTrendingUp  className="text-4xl  sm:text-4xl text-[#33cc99] shrink-0" /> */}
+            <GiHouse  className="text-4xl  sm:text-4xl md:text-5xl text-[#33cc99] shrink-0"/>
+            <span className="font-medium   sm:text-base lg:text-lg text-slate-200">Grow Your Real Estate Business</span>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 p-2 col-span-2 md:col-span-1">
-            <BiHeadphone  className="text-2xl sm:text-4xl text-[#33cc99] shrink-0" />
-            <span className="font-medium text-slate-200">Dedicated Support</span>
+            <BiHeadphone  className="text-4xl  sm:text-4xl md:text-5xl text-[#33cc99] shrink-0" />
+            <span className="font-medium   sm:text-base lg:text-lg text-slate-200">Dedicated Support</span>
           </div>
 
         </div>

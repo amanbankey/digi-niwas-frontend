@@ -6,7 +6,9 @@ import './App.css'
 import Layout from './layouts/Layout'
 import { Routes, Route } from "react-router-dom";
 import Home from './pages/Home'
-
+import NiwasAI from './pages/NiwasAI'
+import About from './pages/About'
+import AgentCorner from './pages/AgentCorner'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -17,10 +19,11 @@ function App() {
    <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          {/* <Route path='signup' element={<Signup/>} />
-          <Route path='user-auth' element={<UserAuth/>} />
-          <Route path='b2b-auth' element={<B2BAuth/>} />
-          <Route path='admin-dashboard' element={<AdminDashboard/>} />
+
+          <Route path='niwas-ai' element={<NiwasAI/>} />
+        <Route path='about' element={<About/>} />
+            <Route path='agent-corner' element={<AgentCorner/>} />
+          {/* <Route path='admin-dashboard' element={<AdminDashboard/>} />
 
           <Route path='admin-login' element={<AdminLogin/>} />
 

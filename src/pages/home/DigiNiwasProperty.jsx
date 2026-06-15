@@ -295,7 +295,7 @@ import {
 
  function AgentDashboard() {
     return (
-      <section   className="min-h-screen bg-[#274255] text-white  px-10 py-10">
+      <section  id="agent" className="min-h-screen bg-[#274255] text-white  px-10 py-10">
         <div className="max-w-[1420px] mx-auto grid grid-cols-1 xl:grid-cols-12 gap-4 items-center">
           <div className="xl:col-span-4 space-y-10">
             <div className="flex items-center gap-3 mb-6">
@@ -315,7 +315,7 @@ import {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8">
               {features.map((f) => (
                 <div key={f.title} className="flex gap-2">
-                  <div className="w-9 h-9 shrink-0 rounded-lg border border-mint/50 text-emerald-400 flex items-center justify-center">
+                  <div className="w-12 h-12 cursor-pointer  shrink-0 rounded-lg border border-mint/50 text-emerald-400 flex items-center justify-center">
                     <f.icon size={18} />
                   </div>
                   <div>

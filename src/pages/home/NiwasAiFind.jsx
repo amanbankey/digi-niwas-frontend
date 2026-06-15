@@ -18,6 +18,10 @@ const properties = [
   { img: 'https://res.cloudinary.com/dhuabv2it/image/upload/v1780736760/house1_rmtft8.jpg', title: "2BHK Modern Villa", sub: "Ambala City, Haryana", price: "₹28,500" },
   { img: 'https://res.cloudinary.com/dhuabv2it/image/upload/v1780736760/house2_jhd68o.jpg', title: "2BHK Apartment", sub: "Near Delhi Highway", price: "₹26,000" },
   { img: 'https://res.cloudinary.com/dhuabv2it/image/upload/v1780736762/house3_w1avuf.jpg', title: "2BHK Builder Floor", sub: "Ambala Cantt", price: "₹27,000" },
+   { img: 'https://res.cloudinary.com/dhuabv2it/image/upload/v1780736760/house1_rmtft8.jpg', title: "2BHK Modern Villa", sub: "Ambala City, Haryana", price: "₹28,500" },
+  { img: 'https://res.cloudinary.com/dhuabv2it/image/upload/v1780736760/house2_jhd68o.jpg', title: "2BHK Apartment", sub: "Near Delhi Highway", price: "₹26,000" },
+  { img: 'https://res.cloudinary.com/dhuabv2it/image/upload/v1780736762/house3_w1avuf.jpg', title: "2BHK Builder Floor", sub: "Ambala Cantt", price: "₹27,000" },
+
 ];
 const features = [
   { icon: FaBrain, t1: "Understands", t2: "Your Needs" },
@@ -44,7 +48,7 @@ const features = [
     return () => clearInterval(interval);
   }, []);
     return (
-      <section className="sm:min-h-screen bg-[#274255] text-white pt-20 px-4 sm:px-8 lg:px-14 sm:py-10">
+      <section id="list-property" className="sm:min-h-screen bg-[#274255] text-white pt-20 px-4 sm:px-8 lg:px-14 sm:py-10">
         <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
           {/* LEFT */}
           <div>
@@ -74,7 +78,7 @@ const features = [
                   key={f.title2}
                   className="rounded-xl border border-[#1f3a3f] bg-[#0d2329]/60 p-3 sm:p-4 flex flex-col items-start gap-2"
                 >
-                  <div className="w-9 h-9 rounded-md border border-[#2dd4a8]/40 text-[#2dd4a8] flex items-center justify-center">
+                  <div className="w-9 h-9 hover:scale-110 duration-100 transition-all rounded-md border border-[#2dd4a8]/40 text-[#2dd4a8] flex items-center justify-center">
                     <f.icon size={16} />
                   </div>
                   <div className="text-[11px] sm:text-xs leading-tight">
@@ -214,8 +218,19 @@ const features = [
     );
   }
 export default function NiwasAIFinds() {
+
+  const [startIndex, setStartIndex] = useState(0);
+  const visibleProperties = properties.slice(startIndex, startIndex + 3);
+
+ const handleNext = () => {
+  if (startIndex < properties.length - 3) {
+    setStartIndex((prev) => prev + 1);
+  } else {
+    setStartIndex(0);
+  }
+};
     return (
-      <section className="bg-[#274255] text-white px-8 py-10 sm:px-10 xl:px-14 lg:py-10 ">
+      <section id="niwas-ai" className="bg-[#274255] text-white px-8 py-10 sm:px-10 xl:px-14 lg:py-10  ">
         <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 sm:pb-10 lg:pb-20 xl:pb-32 lg:pt-5 gap-10 items-center">
           {/* LEFT */}
           <div>
@@ -224,7 +239,7 @@ export default function NiwasAIFinds() {
               <br />
               <span className="text-[#2dd4a8]">What You Need.</span>
             </h2>
-            <p className="text-gray-400 mt-5 max-w-md text-sm sm:text-base leading-relaxed">
+            <p className="text-gray-400 mt-5 max-w-md text-sm  sm:text-lg leading-relaxed">
               Smart AI that understands your needs and shows the best property
               options in seconds.
             </p>
@@ -232,9 +247,9 @@ export default function NiwasAIFinds() {
               {features.map((f) => (
                 <div key={f.t2} className="flex items-center gap-3">
                   <span className="w-10 h-10 rounded-full border border-[#2dd4a8]/50 text-[#2dd4a8] flex items-center justify-center">
-                    <f.icon size={18} />
+                    <f.icon size={20} />
                   </span>
-                  <div className="text-xs sm:text-sm leading-tight">
+                  <div className="text-xs sm:text-base md:text-lg leading-tight">
                     <div>{f.t1}</div>
                     <div>{f.t2}</div>
                   </div>
@@ -247,7 +262,7 @@ export default function NiwasAIFinds() {
             <div className="relative rounded-2xl border border-[#1f3a3f] bg-[#0d2329]/60 backdrop-blur p-4 sm:p-5">
               {/* avatar top right */}
               <div className="absolute -top-5 right-6 sm:right-10 flex items-center gap-2 rounded-full bg-[#0d2329] border border-[#1f3a3f] pl-3 pr-1 py-1">
-                <span className="text-[10px] sm:text-xs text-gray-300">under ₹30k near schools</span>
+                <span className="text-[10px] sm:text-sm text-gray-300">under ₹30k near schools</span>
                 <span className="w-7 h-7 rounded-full bg-gradient-to-br from-amber-300 to-amber-600 flex items-center justify-center text-[10px] font-bold">
                   U
                 </span>
@@ -263,9 +278,10 @@ export default function NiwasAIFinds() {
               </div>
               {/* property cards */}
               <div className="relative">
-                <div className="grid grid-cols-3 gap-2 sm:gap-3">
-                  {properties.map((p) => (
-                    <div key={p.title} className="rounded-xl border border-[#1f3a3f] bg-[#0a1a1f]/80 overflow-hidden">
+                <div className="flex gap-2 sm:gap-3 justify-between w-full  
+                ">
+                  {visibleProperties.map((p) => (
+                    <div key={p.title} className="rounded-xl w-full border border-[#1f3a3f] bg-[#0a1a1f]/80 overflow-hidden">
                       <div className="relative">
                         <img src={p.img} alt={p.title} loading="lazy" className="w-full h-20 sm:h-28 object-cover" />
                         <span className="absolute top-1.5 right-1.5 w-6 h-6 rounded-full bg-black/50 border border-white/20 text-white flex items-center justify-center">
@@ -273,17 +289,17 @@ export default function NiwasAIFinds() {
                         </span>
                       </div>
                       <div className="p-2 sm:p-3">
-                        <div className="text-[11px] sm:text-sm font-semibold leading-tight">{p.title}</div>
-                        <div className="text-[9px] sm:text-[11px] text-gray-400 mt-0.5">{p.sub}</div>
+                        <div className="text-[11px] sm:text-base font-semibold leading-tight">{p.title}</div>
+                        <div className="text-[9px] sm:text-sm text-gray-400 mt-0.5">{p.sub}</div>
                         <div className="text-[10px] sm:text-xs text-[#2dd4a8] font-semibold mt-1.5">
-                          {p.price} <span className="text-gray-500 font-normal">/ month</span>
+                          {p.price} <span className="text-gray-500 text-sm font-normal">/ month</span>
                         </div>
                       </div>
                     </div>
                   ))}
                 </div>
                 {/* arrow */}
-                <button className="absolute -right-3 sm:-right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full border border-[#2dd4a8]/50 bg-[#0a1a1f] text-[#2dd4a8] flex items-center justify-center">
+                <button   onClick={handleNext} className="absolute right-0 top-1/2  -translate-y-1/2 w-8 h-8 rounded-full border border-[#2dd4a8]/50 bg-[#0a1a1f] text-[#2dd4a8] flex items-center justify-center">
                   <FiChevronRight size={16} />
                 </button>
               </div>

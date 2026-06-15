@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{  useRef, useState, useEffect } from 'react';
 import { 
   HiOutlineShieldCheck, 
   HiOutlineUserGroup, 
@@ -52,16 +52,67 @@ const ecosystemCards = [
   }
 ];
 
-const statsData = [
-  { icon: HiOutlineUserGroup, count: "150+", label: "Verified Agents" },
-  { icon: HiOutlineHome, count: "500+", label: "Properties Listed" },
-  { icon: HiOutlineUserGroup, count: "10,000+", label: "Happy Customers" },
-  { icon: HiOutlineShieldCheck, count: "100%", label: "Safe & Secure Platform" }
-];
+// const statsData = [
+//   { icon: HiOutlineUserGroup, count: "150+", label: "Verified Agents" },
+//   { icon: HiOutlineHome, count: "500+", label: "Properties Listed" },
+//   { icon: HiOutlineUserGroup, count: "10,000+", label: "Happy Customers" },
+//   { icon: HiOutlineShieldCheck, count: "100%", label: "Safe & Secure Platform" }
+// ];
 
 export default function FutureEcosystem() {
+  const sectionRef = useRef(null);
+const [startCounter, setStartCounter] = useState(false);
+
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setStartCounter(true);
+        observer.disconnect();
+      }
+    },
+    {
+      threshold: 0.4,
+    }
+  );
+
+  if (sectionRef.current) {
+    observer.observe(sectionRef.current);
+  }
+
+  return () => observer.disconnect();
+}, []);
+
+  const [counts, setCounts] = useState({
+  agents: 0,
+  properties: 0,
+  customers: 0,
+  secure: 0,
+});
+
+useEffect(() => {
+  if (!startCounter) return;
+
+  const interval = setInterval(() => {
+    setCounts((prev) => ({
+      agents: prev.agents < 150 ? prev.agents + 1 : 150,
+      properties: prev.properties < 500 ? prev.properties + 5 : 500,
+      customers: prev.customers < 10000 ? prev.customers + 100 : 10000,
+      secure: prev.secure < 100 ? prev.secure + 1 : 100,
+    }));
+  }, 20);
+
+  return () => clearInterval(interval);
+}, [startCounter]);
+
+const statsData = [
+  { icon: HiOutlineUserGroup, count: counts.agents, suffix: "+", label: "Verified Agents" },
+  { icon: HiOutlineHome, count: counts.properties, suffix: "+", label: "Properties Listed" },
+  { icon: HiOutlineUserGroup, count: counts.customers, suffix: "+", label: "Happy Customers" },
+  { icon: HiOutlineShieldCheck, count: counts.secure, suffix: "%", label: "Safe & Secure Platform" }
+];
   return (
-    <section className="min-h-screen bg-[#274255] text-white px-10 py-8 pb-14 sm:pb-16 flex flex-col justify-center items-center font-sans antialiased selection:bg-[#33cc99] selection:text-black">
+    <section   ref={sectionRef} id='future' className="min-h-screen bg-[#274255] text-white px-10 py-8 pb-14 sm:pb-16 flex flex-col justify-center items-center font-sans antialiased selection:bg-[#33cc99] selection:text-black">
       <div className="w-full max-w-[1440px] bg-[#040f1a] border border-slate-900 rounded-2xl p-6 sm:p-8  shadow-2xl flex flex-col gap-10">
         
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-center">
@@ -134,7 +185,7 @@ export default function FutureEcosystem() {
                 {/* </div> */}
                 <div className="flex flex-col">
                   <span className="text-xl sm:text-2xl font-bold text-slate-100 tracking-tight">
-                    {stat.count}
+                     {stat.count.toLocaleString()} {stat.suffix}
                   </span>
                   <span className="text-xs sm:text-sm font-medium text-slate-400 whitespace-nowrap">
                     {stat.label}

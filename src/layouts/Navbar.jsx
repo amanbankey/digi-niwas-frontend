@@ -224,7 +224,8 @@ import toast from "react-hot-toast";
 import { LuLogOut } from "react-icons/lu";
 // import ProfileDropdown from "../components/ProfileDropdown";
 import { CgProfile } from "react-icons/cg";
-
+import { IoSearchOutline } from "react-icons/io5";
+import { navItems } from "../data/navlinks";
 import  logo  from "../assets/images/logo.jpg";
 import { RxCross1 } from "react-icons/rx";
 
@@ -248,17 +249,10 @@ const Navbar = ({show, setShow}) => {
     setMobileMenuOpen(false);
   };
 
-  const navItems = [
-    { name: "Home", path: "/" },
-    { name: "Explore Properties ", path: "/#" },
-    { name: "Niwas AI", path: "/#" },
-    { name: "Agent Corner", path: "/#" },
-    { name: "About", path: "/#" },
-    // { name: "Contact", path: "/#" },
-  ];
+ 
 
   return (
-    <div className="sticky top-0 z-[9999] shadow-lg">
+    <div className="sticky top-0 z-[9999] shadow-lg ">
       <div className="">
         <nav className="  mx-auto   bg-white/80  transparent  rounded-2xl ">
           <div className="flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-10 h-[65px] sm:h-[70px] lg:h-[75px] max-w-screen-2xl mx-auto">
@@ -272,7 +266,7 @@ const Navbar = ({show, setShow}) => {
                </div>
             </NavLink>
 
-            <div className="hidden lg:flex items-center gap-8 text-[16px] font-medium tracking-wide">
+            <div className="hidden lg:flex items-center  lg:gap-6 xl:gap-8 text-base font-medium tracking-wide">
               {navItems.map((item, index) => (
                 <NavLink
                   key={index}
@@ -293,7 +287,7 @@ const Navbar = ({show, setShow}) => {
               ))}
             </div>
 
-            <div className="flex items-center gap-2 sm:gap-3">
+            <div className="flex items-center gap-2 sm:gap-3 overflow-hidden">
             {/* {!isLoggedIn && ( */}
                 {/* <NavLink
                   to="/admin-login"
@@ -304,12 +298,26 @@ const Navbar = ({show, setShow}) => {
               {/* )} */}
 
               {/* {!isLoggedIn && ( */}
-              <button  
+              <div className="flex gap-4 overflow-hidden">
+              <div className="relative sm:w-full w-40  ">
+              <IoSearchOutline
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"
+                size={18}
+              />
+
+              <input
+                type="text"
+                placeholder="Search location, society..."
+                className="w-full h-10 sm:h-full pl-10 pr-4 py-2 bg-gray-100 border border-gray-300 rounded-full focus:outline-none  "
+              />
+            </div>
+              <div className="sm:min-w-40 "> <button  
                             onClick={() => navigate('/signup')}
-                            className="hidden sm:block px-4 py-2 bg-[#274255]  text-white rounded-lg cursor-pointer"
+                            className="hidden sm:block px-4 py-2 bg-[#274255]  text-white rounded-full cursor-pointer"
                             >
                             Get Started
-                            </button>
+                            </button> </div>
+                            </div>
                 {/* <NavLink
                   to="/signup"
                   className="hidden sm:block px-4 py-2 bg-[#0A2540] hover:bg-blue-700 text-white rounded-lg  cursor-pointer"
@@ -404,7 +412,7 @@ const Navbar = ({show, setShow}) => {
                     setMobileMenuOpen((prev) => !prev);
                   }}
                   to="/signup"
-                  className="sm:hidden w-40 text-center block  px-4 py-2 bg-[#274255]   text-white rounded-lg  cursor-pointer"
+                  className="sm:hidden w-40 text-center block  px-4 py-2 bg-[#274255]   text-white rounded-full  cursor-pointer"
                 >
                   Get Started
                 </NavLink>

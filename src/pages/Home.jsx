@@ -22,7 +22,9 @@ const Home = () => {
         <IphoneSection />
         <DiginiwasWorks />
       
-        <NiwasAIFinds />
+     
+          <NiwasAIFinds />
+      
         
         <DigiNiwasPrpperty/>
         <FutureEcosystem /> 
