@@ -6,7 +6,7 @@ import "./App.css";
 import Layout from "./layouts/Layout";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import NiwasAI from "./pages/NiwasAI";
+import NiwasAI from "./pages/NiwasAi";
 import About from "./pages/About";
 import AgentCorner from "./pages/AgentCorner";
 function App() {
@@ -21,7 +21,7 @@ function App() {
           <Route path="niwas-ai" element={<NiwasAI />} />
           <Route path="about" element={<About />} />
           <Route path="agent-corner" element={<AgentCorner />} />
-          
+
         </Route>
       </Routes>
     </>
