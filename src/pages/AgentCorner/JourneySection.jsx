@@ -53,7 +53,7 @@ const steps = [
 
 export default function JourneySection() {
   return (
-    <div className="bg-[#f8fafb] min-h-screen text-[#191c1d]">
+    <div className="bg-[#f8fafb] lg:min-h-screen text-[#191c1d]">
    
 
       <main className="pt-28 pb-32 max-w-7xl mx-auto px-4 md:px-16">

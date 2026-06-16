@@ -21,7 +21,7 @@ const testimonials = [
 
 const NetworkSection = () => {
   return (
-    <section className="bg-[#f8fafb] py-24 px-4 md:px-10 lg:px-16">
+    <section className="bg-[#f8fafb] py-20 sm:py-32 px-4 md:px-10 lg:px-16">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 space-y-4">
           <span className="block text-[#3f6653] uppercase tracking-[0.2em] text-xs font-bold">

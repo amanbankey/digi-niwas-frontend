@@ -76,9 +76,9 @@ const PricingPlans = () => {
   return (
     <div>
       <NetworkDensity />
-      <section className="bg-slate-50 py-20 px-4 sm:px-6  ">
+      <section className="bg-slate-50 py-20 sm:py-32 px-4 sm:px-6  ">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center sm:mb-16 mb-8">
             <p className="text-[#4d8c7a] font-bold tracking-[4px] text-xs uppercase mb-3">
               Partnership Plans
             </p>
@@ -93,11 +93,11 @@ const PricingPlans = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-7 sm:gap-5 lg:gap-10 pt-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mx-4 sm:mx-0 sm:gap-5 lg:gap-10 pt-8">
             {plans.map((plan, index) => (
               <div
                 key={index}
-                className={`relative rounded-2xl p-8 flex flex-col border-2 hover:border-[#0d2633] shadow-xl duration-500 transition-all hover:scale-110 justify-between bg-white ${
+                className={`relative rounded-2xl p-8 flex flex-col border-2 hover:border-[#0d2633] shadow-xl duration-500 transition-all hover:scale-105 justify-between bg-white ${
                   plan.featured
                     ? ""
                     : "border border-slate-100 shadow-sm"

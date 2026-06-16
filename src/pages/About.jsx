@@ -1,4 +1,4 @@
-import React from "react";
+import React,  { useState, useEffect }  from "react";
 import { Search, BarChart3, Rocket } from "lucide-react";
 const team = [
   {
@@ -25,6 +25,36 @@ const team = [
 ];
 
 function HeroSection() {
+
+  const [stats, setStats] = useState({
+  listings: 0,
+  agents: 0,
+  portfolio: 0,
+});
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setStats((prev) => ({
+      listings:
+        prev.listings < 10000
+          ? Math.min(prev.listings + 100, 10000)
+          : 10000,
+
+      agents:
+        prev.agents < 500
+          ? Math.min(prev.agents + 5, 500)
+          : 500,
+
+      portfolio:
+        prev.portfolio < 5000
+          ? Math.min(prev.portfolio + 50, 5000)
+          : 5000,
+    }));
+  }, 20);
+
+  return () => clearInterval(interval);
+}, []);
+
   return (
     <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-5 pt-32 pb-20 overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -38,34 +68,34 @@ function HeroSection() {
       </div>
 
       <div className="relative z-20 max-w-5xl mx-auto">
-        <h1 className="text-5xl md:text-6xl font-semibold text-white mb-8 leading-tight">
+        <h1 className="text-4xl md:text-6xl font-semibold text-white mb-8 leading-tight">
           Building the Future of{" "}
           <span className="text-[#ffe088]">AI-Powered</span> Real Estate in
           Punjab
         </h1>
 
-        <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-16">
+        <p className="text-base md:text-xl text-white/90 max-w-2xl mx-auto mb-16">
           We're bridging the gap between visionary investors, global NRIs, and
           the heart of Punjab through intelligent discovery and verified data.
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="bg-white/70 backdrop-blur-xl border border-white/20 rounded-xl p-6">
-            <h3 className="text-3xl font-bold text-[#162839]">10,000+</h3>
+            <h3 className="text-3xl font-bold text-[#162839]">{stats.listings.toLocaleString()}+</h3>
             <p className="uppercase text-sm font-semibold text-gray-600">
               Verified Listings
             </p>
           </div>
 
           <div className="bg-white/70 backdrop-blur-xl border border-white/20 rounded-xl p-6">
-            <h3 className="text-3xl font-bold text-[#162839]">500+</h3>
+            <h3 className="text-3xl font-bold text-[#162839]"> {stats.agents.toLocaleString()}+</h3>
             <p className="uppercase text-sm font-semibold text-gray-600">
               Expert Agents
             </p>
           </div>
 
           <div className="bg-white/70 backdrop-blur-xl border border-white/20 rounded-xl p-6">
-            <h3 className="text-3xl font-bold text-[#162839]">₹5,000 Cr+</h3>
+            <h3 className="text-3xl font-bold text-[#162839]"> {stats.agents.toLocaleString()}+</h3>
             <p className="uppercase text-sm font-semibold text-gray-600">
               Portfolio Value
             </p>

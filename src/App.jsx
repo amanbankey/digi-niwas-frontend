@@ -9,6 +9,9 @@ import Home from "./pages/Home";
 import NiwasAI from "./pages/NiwasAi";
 import About from "./pages/About";
 import AgentCorner from "./pages/AgentCorner";
+import ExploreProperties from "./pages/ExploreProperties";
+
+
 function App() {
   const [count, setCount] = useState(0);
 
@@ -21,6 +24,7 @@ function App() {
           <Route path="niwas-ai" element={<NiwasAI />} />
           <Route path="about" element={<About />} />
           <Route path="agent-corner" element={<AgentCorner />} />
+           <Route path="explore-property" element={<ExploreProperties />} />
 
         </Route>
       </Routes>
