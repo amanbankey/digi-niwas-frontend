@@ -12,7 +12,7 @@ const team = [
     name: "Sandeep Kaur",
     role: "Head of Strategy",
     image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80",
+      "https://media.istockphoto.com/id/1382284148/photo/shot-of-a-young-businesswoman-standing-with-her-arms-crossed-at-work.jpg?s=612x612&w=0&k=20&c=t4oE3UanKjrhnwWmI3On2Xz6rX0su6Zb-vGQP_A-0Rc=",
     desc: "20 years of expertise in luxury residential assets across North India.",
   },
   {

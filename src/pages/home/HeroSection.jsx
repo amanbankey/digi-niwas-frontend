@@ -29,6 +29,8 @@ import dashboard from "../../assets/images/dashboard.png";
 import property from "../../assets/images/property.png";
 import { TbHomeSignal } from "react-icons/tb";
 import { CiMobile3 } from "react-icons/ci";
+import { FaApple } from "react-icons/fa"
+import { IoLogoGooglePlaystore } from "react-icons/io5";
 
 const bgImages = [
   "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80",
@@ -339,14 +341,20 @@ function RightPhones() {
           />
         </div>
       </div>
-      <div>
-        {" "}
+      <div className="flex gap-3">
+          <button
+          id="download-app-btn"
+          className="border border-white px-3 py-2 rounded-xl"
+        >
+          Get it on 
+        <div class="text-lg flex items-center gap-2">  <IoLogoGooglePlaystore className="text-2xl"/>Play Store</div>
+        </button>
         <button
           id="download-app-btn"
           className="border border-white px-3 py-2 rounded-xl"
         >
           Download on the
-        <div class="text-lg flex items-center gap-2">  <CiMobile3 className="text-2xl"/>App Store</div>
+        <div class="text-lg flex items-center gap-2"> <FaApple  className="text-2xl" />  App Store</div>
         </button>
       </div>
     </div>

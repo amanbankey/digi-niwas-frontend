@@ -117,7 +117,7 @@ export default function NiwasAi() {
                     <CheckCircle2 size={12} /> NRI Choice
                   </span>
                 </div>
-                <div className="absolute top-3 right-3 bg-[#2563EB] text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+                <div className="absolute top-3 right-3 bg-[#274255] text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
                   98% Match
                 </div>
                 <div className="absolute bottom-3 left-4 text-white">
@@ -164,7 +164,7 @@ export default function NiwasAi() {
                     <CheckCircle2 size={12} /> Verified
                   </span>
                 </div>
-                <div className="absolute top-3 right-3 bg-[#2563EB] text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+                <div className="absolute top-3 right-3 bg-[#274255] text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
                   96% Match
                 </div>
                 <div className="absolute bottom-3 left-4 text-white">

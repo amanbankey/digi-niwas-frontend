@@ -99,7 +99,7 @@ export default function ExploreProperty() {
         <select
           value={listingType}
           onChange={(e) => setListingType(e.target.value)}
-          className="h-10 px-3 border border-blue-600 rounded-md text-sm"
+          className="h-10 px-3 border border-[#274255] rounded-md text-sm"
         >
           <option>For Sale</option>
           <option>For Rent</option>
@@ -156,7 +156,7 @@ export default function ExploreProperty() {
 
         <button
           onClick={handleSearch}
-          className="h-10 px-5 bg-blue-600 text-white rounded-md text-sm font-medium"
+          className="h-10 px-5 bg-[#274255] text-white rounded-md text-sm font-medium"
         >
           Save Search
         </button>
