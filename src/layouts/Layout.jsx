@@ -8,25 +8,26 @@ const Layout = () => {
   const [show, setShow] = useState(false);
 
 
-//   const hideNavbar = 
-//   location.pathname === "/admin-dashboard" ||
-//   location.pathname === "/b2b-dashboard" ||
-//   location.pathname ===  '/user-dashboard' 
+  const hideNavbar = 
+  location.pathname === "/admin-dashboard" ||
+  location.pathname === "/add-property" 
+  // location.pathname ===  '/user-dashboard' 
 
 
 
-//   const hideFooter = location.pathname === '/admin-dashboard' ||
-//   location.pathname === "/b2b-dashboard" || location.pathname === "/user-dashboard"  ;
+  const hideFooter = location.pathname === '/admin-dashboard' || location.pathname === "/add-property" 
+  // location.pathname === "/b2b-dashboard" || location.pathname === "/user-dashboard"  ;
 
   return (
     <>
-    
-       <Navbar show={show} setShow={setShow}/> 
+     {!hideNavbar &&   <Navbar show={show} setShow={setShow}/> }
+     
       <Outlet />
 
       {/* {show && <Signup setShow={setShow} />} */}
       
-      <Footer />
+
+       {!hideFooter && <Footer /> }
       
       
     </>
