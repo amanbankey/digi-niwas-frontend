@@ -1,250 +1,12 @@
-// import { MapContainer, TileLayer, Marker, Popup, CircleMarker } from "react-leaflet";
-// import { useState, useEffect } from "react";
-// import { FiHeart, FiChevronRight,FiChevronLeft,  
-//        FiHome,
-//     FiVideo, FiArrowRight, FiMessageCircle,  FiCheck,FiTarget,FiTrendingUp, FiUsers,
-//     FiBarChart2, } from "react-icons/fi";
-// import { FaBrain, FaRegClock,  FaInstagram, FaFacebook, FaWhatsapp, FaBullhorn } from "react-icons/fa";
-// import { BiTargetLock } from "react-icons/bi";
-// import { RiRobot2Line } from "react-icons/ri";
-
-// const locations = [
-//   {
-//     name: "Delhi",
-//     position: [28.6139, 77.2090],
-//     color: "#ef4444",
-//   },
-//   {
-//     name: "Mumbai",
-//     position: [19.0760, 72.8777],
-//     color: "#3b82f6",
-//   },
-//   {
-//     name: "Pune",
-//     position: [18.5204, 73.8567],
-//     color: "#22c55e",
-//   },
-//   {
-//     name: "Bangalore",
-//     position: [12.9716, 77.5946],
-//     color: "#f59e0b",
-//   },
-// ];
-
-// const properties = [
-//   { img: 'https://res.cloudinary.com/dhuabv2it/image/upload/v1780736760/house1_rmtft8.jpg', title: "2BHK Modern Villa", sub: "Ambala City, Haryana", price: "₹28,500" },
-//   { img: 'https://res.cloudinary.com/dhuabv2it/image/upload/v1780736760/house2_jhd68o.jpg', title: "2BHK Apartment", sub: "Near Delhi Highway", price: "₹26,000" },
-//   { img: 'https://res.cloudinary.com/dhuabv2it/image/upload/v1780736762/house3_w1avuf.jpg', title: "2BHK Builder Floor", sub: "Ambala Cantt", price: "₹27,000" },
-// ];
-
-// export default function IndiaMap() {
-//   return (
-//         <div className="max-w-6xl  w-full flex flex-col gap-4 sm:gap-0 sm:flex-row justify-center items-center mx-auto  px-5  "> 
-//             <div className="sm:w-4/5 w-full h-96   z-0 flex bg-[#274255]  justify-center items-center mx-auto    overflow-hidden">
-              
-//               <MapContainer
-//                 center={[22.5937, 78.9629]}
-//                 zoom={4}
-//                 minZoom={3}
-//                 maxZoom={18}
-//                 worldCopyJump={false}
-//                 maxBounds={[
-//                   [-90, -180],
-//                   [90, 180],
-//                 ]}
-//                 maxBoundsViscosity={1}
-//                 className="w-full h-full "
-//               >
-//                 <TileLayer
-//                   attribution="&copy; OpenStreetMap"
-//                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-//                   noWrap={true}
-                
-//                 />
-
-//                 {locations.map((location) => (
-//                   <CircleMarker
-//                     key={location.name}
-//                     center={location.position}
-//                     radius={2}
-//                     pathOptions={{
-//                       color: location.color,
-//                       fillColor: location.color,
-//                       fillOpacity: 1,
-//                     }}
-//                   >
-//                     <Popup>{location.name}</Popup>
-//                   </CircleMarker>
-//                 ))}
-//               </MapContainer>
-//             </div>
-  
-  
-//                 {/* <div className=""> */}
-//                       <div className="grid grid-cols-2  gap-5 w-full sm:max-w-lg  sm:px-5 sm:gap-3">
-//                         {properties.map((p) => (
-//                           <div key={p.title} className="rounded-md  w-full border border-[#1f3a3f] bg-white/80 overflow-hidden">
-//                             <div className="relative">
-//                               <img src={p.img} alt={p.title} loading="lazy" className="w-full h-20 sm:h-24 object-cover" />
-//                               <span className="absolute top-1.5 right-1.5 w-6 h-6 rounded-full bg-black/50 border border-white/20 text-white flex items-center justify-center">
-//                                 <FiHeart size={12} />
-//                               </span>
-//                             </div>
-//                             <div className="p-2 sm:p-3">
-//                               <div className="text-[11px] sm:text-sm font-semibold leading-tight">{p.title}</div>
-//                               <div className="text-[9px] sm:text-[11px]   mt-0.5">{p.sub}</div>
-//                               <div className="text-[10px] sm:text-xs   font-semibold mt-1.5">
-//                                 {p.price} <span className="  font-normal">/ month</span>
-//                               </div>
-//                             </div>
-//                           </div>
-//                         ))}
-//                       </div>
-//                       {/* arrow */}
-//                       {/* <button className="absolute -right-3 sm:-right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full border border-[#2dd4a8]/50 bg-[#0a1a1f] text-[#2dd4a8] flex items-center justify-center">
-//                         <FiChevronRight size={16} />
-//                       </button> */}
-//                     {/* </div> */}
- 
-//  </div>
-//   );
-// }
-
-
-
-// import { MapContainer, TileLayer, Popup, CircleMarker } from "react-leaflet";
-// import { useEffect } from "react";
-// import { useMap } from "react-leaflet";import { useState } from "react";
-
-
-// const locations = [
-//   {
-//     name: "Delhi",
-//     position: [28.6139, 77.2090],
-//     color: "#ef4444",
-//     properties: [
-//       {
-//         img: "https://res.cloudinary.com/dhuabv2it/image/upload/v1780736760/house1_rmtft8.jpg",
-//         title: "Delhi Villa",
-//         sub: "South Delhi",
-//         price: "₹30,000",
-//       },
-//       {
-//         img: "https://res.cloudinary.com/dhuabv2it/image/upload/v1780736760/house2_jhd68o.jpg",
-//         title: "Delhi Flat",
-//         sub: "Noida",
-//         price: "₹25,000",
-//       },
-//     ],
-//   },
-//   {
-//     name: "Mumbai",
-//     position: [19.0760, 72.8777],
-//     color: "#3b82f6",
-//     properties: [
-//       {
-//         img: "https://res.cloudinary.com/dhuabv2it/image/upload/v1780736762/house3_w1avuf.jpg",
-//         title: "Mumbai Sea View",
-//         sub: "Bandra",
-//         price: "₹50,000",
-//       },
-//     ],
-//   },
-// ];
-
-// export default function IndiaMap() {
-//   const [selectedCity, setSelectedCity] = useState(locations[0]);
-//   function FixMapSize() {
-//     const map = useMap();
-  
-//     useEffect(() => {
-//       setTimeout(() => {
-//         map.invalidateSize();
-//       }, 100);
-//     }, [map]);
-  
-//     return null;
-//   }
-
-//   return (
-//     <div className="w-full h-[600px] flex gap-4 px-6 mt-10">
-      
-//       {/* LEFT → MAP */}
-//       <div className="w-[60%] h-full rounded-2xl overflow-hidden border shadow-lg">
-//         <MapContainer
-//           center={[22.5937, 78.9629]}
-//           zoom={5}
-//           className="w-full h-full"
-//         >
-//            <FixMapSize /> 
-//           <TileLayer
-//             attribution="&copy; OpenStreetMap"
-//             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-//           />
-
-//           {locations.map((location) => (
-//             <CircleMarker
-//               key={location.name}
-//               center={location.position}
-//               radius={selectedCity.name === location.name ? 10 : 6}
-//               eventHandlers={{
-//                 click: () => setSelectedCity(location),
-//               }}
-//               pathOptions={{
-//                 color: location.color,
-//                 fillColor: location.color,
-//                 fillOpacity: 1,
-//               }}
-//             >
-//               <Popup>{location.name}</Popup>
-//             </CircleMarker>
-//           ))}
-//         </MapContainer>
-//       </div>
-
-//       {/* RIGHT → PROPERTY LIST */}
-//       <div className="w-[40%] h-full overflow-y-auto pr-6">
-//       <div className="grid grid-cols-2 gap-7">
-//           {selectedCity.properties.map((p, i) => (
-//             <div
-//               key={i}
-//               className="bg-white rounded-xl shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition"
-//             >
-//               <img
-//                 src={p.img}
-//                 alt={p.title}
-//                 className="w-full h-40 object-cover"
-//               />
-
-//               <div className="p-3">
-//                 <div className="text-sm font-semibold">{p.title}</div>
-//                 <div className="text-xs text-gray-500">{p.sub}</div>
-//                 <div className="text-sm font-bold mt-1">
-//                   {p.price}
-//                   <span className="text-xs font-normal"> / month</span>
-//                 </div>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-
-//     </div>
-//   );
-// }
-
-
-
-
 import { MapContainer, TileLayer, Popup, CircleMarker } from "react-leaflet";
 import { useEffect } from "react";
-import { useMap } from "react-leaflet";import { useState } from "react";
-
+import { useMap } from "react-leaflet";
+import { useState } from "react";
 
 const locations = [
   {
     name: "Delhi",
-    position: [28.6139, 77.2090],
+    position: [28.6139, 77.209],
     color: "#ef4444",
     properties: [
       {
@@ -259,12 +21,11 @@ const locations = [
         sub: "Noida",
         price: "₹25,000",
       },
-      
     ],
   },
   {
     name: "Mumbai",
-    position: [19.0760, 72.8777],
+    position: [19.076, 72.8777],
     color: "#3b82f6",
     properties: [
       {
@@ -275,62 +36,202 @@ const locations = [
       },
     ],
   },
-  
 ];
+
+const DARK_TILE_URL =
+  "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png";
+const DARK_TILE_ATTRIBUTION =
+  '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>';
+
+
+function FixMapSize() {
+  const map = useMap();
+  useEffect(() => {
+    setTimeout(() => map.invalidateSize(), 100);
+  }, [map]);
+  return null;
+}
+
+function CustomZoomControl() {
+  const map = useMap();
+  return (
+    <div
+      style={{
+        position: "absolute",
+        bottom: "20px",
+        right: "16px",
+        zIndex: 1000,
+        display: "flex",
+        flexDirection: "column",
+        gap: "4px",
+      }}
+    >
+      {["+", "−"].map((sym, i) => (
+        <button
+          key={sym}
+          onClick={() => (i === 0 ? map.zoomIn() : map.zoomOut())}
+          style={{
+            width: "36px",
+            height: "36px",
+            borderRadius: "10px",
+            background: "rgba(255,255,255,0.12)",
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)",
+            border: "1px solid rgba(255,255,255,0.20)",
+            color: "#fff",
+            fontSize: "20px",
+            fontWeight: 300,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            lineHeight: 1,
+          }}
+        >
+          {sym}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+
+function CustomMarker({ position, isSelected, onClick, icon = "home" }) {
+  return (
+    <CircleMarker
+      center={position}
+      radius={isSelected ? 18 : 14}
+      eventHandlers={{ click: onClick }}
+      pathOptions={{
+        color: "#10b981",
+        fillColor: "#10b981",
+        fillOpacity: 1,
+        weight: 0,
+      }}
+    />
+  );
+}
 
 export default function IndiaMap() {
   const [selectedCity, setSelectedCity] = useState(locations[0]);
-  function FixMapSize() {
-    const map = useMap();
-  
-    useEffect(() => {
-      setTimeout(() => {
-        map.invalidateSize();
-      }, 100);
-    }, [map]);
-  
-    return null;
-  }
+
+
+  const marketData = {
+    activeListings: "1,284",
+    priceTrend: "4.2%",
+    zone: "High Demand Zone: Worli",
+  };
 
   return (
     <div className="w-full min-h-[600px] flex flex-col lg:flex-row gap-4 px-8 lg:px-6 mt-10">
-      
       {/* MAP */}
-      <div className="w-full lg:w-[60%] h-[300px] sm:h-[400px] lg:h-[600px] rounded-2xl overflow-hidden border shadow-lg z-0">
+      <div className="relative w-full lg:w-[60%] h-[300px] sm:h-[400px] lg:h-[600px] inset-0 rounded-2xl overflow-hidden border shadow-lg z-0">
         <MapContainer
-          center={[22.5937, 78.9629]}
-          zoom={5}
-          className="w-full h-full"
+          center={[19.4, 72.9]}
+          zoom={11}
+          minZoom={2} /* prevents zooming out to show multiple world copies */
+          maxZoom={18}
+          worldCopyJump={false} /* disables world copy wrapping */
+          noWrap={true} /* tiles won't wrap horizontally */
+          zoomControl={false}
+          scrollWheelZoom={false}
+          style={{ width: "100%", height: "100%" }}
         >
           <FixMapSize />
+          <CustomZoomControl />
+
+          {/* Dark tile layer */}
           <TileLayer
-            attribution="&copy; OpenStreetMap"
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            url={DARK_TILE_URL}
+            attribution={DARK_TILE_ATTRIBUTION}
+            noWrap={true}
           />
-  
-          {locations.map((location) => (
+
+          {/* City markers */}
+          {locations.map((loc) => (
             <CircleMarker
-              key={location.name}
-              center={location.position}
-              radius={selectedCity.name === location.name ? 10 : 6}
-              eventHandlers={{
-                click: () => setSelectedCity(location),
-              }}
+              key={loc.name}
+              center={loc.position}
+              radius={selectedCity.name === loc.name ? 16 : 12}
+              eventHandlers={{ click: () => setSelectedCity(loc) }}
               pathOptions={{
-                color: location.color,
-                fillColor: location.color,
+                color: "#ffffff",
+                weight: 2,
+                fillColor: "#10b981",
                 fillOpacity: 1,
               }}
             >
-              <Popup>{location.name}</Popup>
+              <Popup>{loc.name}</Popup>
             </CircleMarker>
           ))}
         </MapContainer>
+
+        <div
+  className="absolute top-2 right-2 sm:top-4 sm:right-4 z-[1000] rounded-xl sm:rounded-2xl
+             p-3 sm:p-4 w-[170px] xs:w-[185px] sm:w-[210px] lg:w-[230px]"
+  style={{
+    background: "rgba(255,255,255,0.10)",
+    backdropFilter: "blur(18px)",
+    WebkitBackdropFilter: "blur(18px)",
+    border: "1px solid rgba(255,255,255,0.18)",
+  }}
+>
+  {/* Title */}
+  <p className="text-white text-sm sm:text-[17px] font-bold mb-2 sm:mb-3 tracking-tight">
+    Market Pulse
+  </p>
+
+  {/* Active Listings */}
+  <div className="flex items-center justify-between mb-1">
+    <span className="text-[8px] sm:text-[10px] font-semibold tracking-[0.12em] text-white/50 uppercase">
+      Active Listings
+    </span>
+
+    <span className="text-sm sm:text-[16px] font-bold text-white">
+      {marketData.activeListings}
+    </span>
+  </div>
+
+  {/* Divider */}
+  <div className="border-t border-white/10 my-2" />
+
+  {/* Price Trend */}
+  <div className="flex items-center justify-between mb-2 sm:mb-3">
+    <span className="text-[8px] sm:text-[10px] font-semibold tracking-[0.12em] text-white/50 uppercase">
+      Price Trend
+    </span>
+
+    <span className="flex items-center gap-1 text-sm sm:text-[16px] font-bold text-emerald-400">
+      <svg
+        className="w-2.5 h-2.5 sm:w-3 sm:h-3"
+        viewBox="0 0 12 12"
+        fill="none"
+      >
+        <path d="M6 1L11 7H1L6 1Z" fill="#34d399" />
+      </svg>
+
+      {marketData.priceTrend}
+    </span>
+  </div>
+
+
+  <div
+    className="flex items-center gap-2 rounded-lg sm:rounded-xl px-2.5 sm:px-3 py-2"
+    style={{ background: "rgba(255,255,255,0.07)" }}
+  >
+    <span className="w-2 h-2 rounded-full bg-emerald-400 flex-shrink-0 shadow-[0_0_6px_#34d399]" />
+
+    <span className="text-[9px] sm:text-[11px] text-white/80 font-medium leading-tight">
+      {marketData.zone}
+    </span>
+  </div>
+</div>
+
       </div>
-  
-      {/* PROPERTY LIST */}
+
+     
       <div className="w-full lg:w-[40%] h-full overflow-y-auto pr-0 lg:pr-6">
-      <div className="grid grid-cols-2 gap-7">
+        <div className="grid grid-cols-2 gap-7">
           {selectedCity.properties.map((p, i) => (
             <div
               key={i}
@@ -341,7 +242,7 @@ export default function IndiaMap() {
                 alt={p.title}
                 className="w-full h-40 object-cover"
               />
-  
+
               <div className="p-3">
                 <div className="text-sm font-semibold">{p.title}</div>
                 <div className="text-xs text-gray-500">{p.sub}</div>
@@ -354,7 +255,6 @@ export default function IndiaMap() {
           ))}
         </div>
       </div>
-  
     </div>
   );
 }

@@ -5,11 +5,8 @@ import {
   HiOutlineHome, 
   HiOutlineVideoCamera, 
   HiOutlineShoppingCart,
-//   HiOutlineWrench
 } from 'react-icons/hi';
-// import { HiOutlineWrench } from "react-icons/hi";
 import homelogo from '../../assets/images/homelogo.png'
-// import { HiWrench } from "react-icons/hi";
 import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
 
 import { 
@@ -52,12 +49,6 @@ const ecosystemCards = [
   }
 ];
 
-// const statsData = [
-//   { icon: HiOutlineUserGroup, count: "150+", label: "Verified Agents" },
-//   { icon: HiOutlineHome, count: "500+", label: "Properties Listed" },
-//   { icon: HiOutlineUserGroup, count: "10,000+", label: "Happy Customers" },
-//   { icon: HiOutlineShieldCheck, count: "100%", label: "Safe & Secure Platform" }
-// ];
 
 export default function FutureEcosystem() {
   const sectionRef = useRef(null);
@@ -148,9 +139,8 @@ const statsData = [
                 key={card.id} 
                 className="bg-[#051422] border border-slate-800/60 rounded-xl hover:scale-105 p-5 flex flex-col items-center text-center justify-between sm:min-h-[240px] hover:border-[#33cc99]/30 transition-all duration-300 group"
               >
-                {/* <div className="w-14 sm:w-20 sm:h-20 h-14 text-3xl sm:text-5xl bg-[#071c2f] rounded-xl flex items-center justify-center text-[#33cc99] mb-4 border border-slate-800 group-hover:scale-105 transition-transform duration-300"> */}
                   <card.icon  className='text-3xl sm:text-6xl text-[#33cc99] font-medium' />
-                {/* </div> */}
+            
 
                 <div className="flex-grow flex flex-col justify-start">
                   <h3 className="text-base font-semibold pt-3 text-slate-100 mb-2 tracking-tight">
@@ -180,9 +170,7 @@ const statsData = [
                 key={index} 
                 className="flex items-center gap-4 px-2 sm:px-4 justify-start sm:justify-center md:border-r last:border-0 border-slate-800/60 lg:last:border-0"
               >
-                {/* <div className="w-12 h-12 shrink-0 rounded-xl bg-[#051422] border border-slate-800 flex items-center justify-center text-[#33cc99]"> */}
                   <stat.icon  className='text-2xl sm:text-4xl text-[#33cc99] font-medium' />
-                {/* </div> */}
                 <div className="flex flex-col">
                   <span className="text-xl sm:text-2xl font-bold text-slate-100 tracking-tight">
                      {stat.count.toLocaleString()} {stat.suffix}

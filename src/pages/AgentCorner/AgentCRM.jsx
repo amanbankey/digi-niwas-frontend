@@ -27,7 +27,7 @@ const workflowSteps = [
   },
 ];
 
-// console.log('agent')
+ 
 const AgentCRMWorkflow = () => {
   return (
     <div className="bg-[#0d2633] lg:min-h-screen h-full text-white ">

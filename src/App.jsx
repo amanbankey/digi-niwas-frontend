@@ -14,6 +14,10 @@ import ExploreProperties from "./pages/ExploreProperties";
 import AdminDashboard from "./pages/Admin/Dashboard"
 import AddProperty from './pages/Admin/AddProperty'
 import PropertyManagement from "./pages/Admin/PropertyManagement";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import CookiesPolicy from "./pages/CookiesPolicy";
+import TermsService from "./pages/TermsService";
+import Blogs from "./pages/Blogs";
 
 
 function App() {
@@ -34,6 +38,13 @@ function App() {
              <Route path="admin-dashboard" element={<AdminDashboard />} />
               <Route path="property-management" element={<PropertyManagement />} />
 
+
+              <Route path="privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="cookie-policy" element={<CookiesPolicy />} />
+              <Route path="terms-service" element={<TermsService />} />
+              
+               <Route path="blogs" element={<Blogs />} />
+ 
         </Route>
       </Routes>
     </>

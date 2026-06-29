@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FiSearch, FiArrowRight, FiMapPin } from "react-icons/fi";
 import {
   MdVerified,
@@ -53,7 +53,7 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, []);
 
-  console.log("bg", bgImages);
+ 
   return (
     <div className="sm:min-h-screen h-full font-sans bg-[#0d1b2a] text-white">
       {/* <Navbar /> */}
@@ -123,36 +123,8 @@ function LeftContent() {
         </button>
       </div>
 
-      {/* <div className="w-full max-w-2xl mx-auto lg:mx-0 border border-white/30 bg-[#274255] rounded-xl p-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-0  ">
-        <div className="relative flex-1">
-          <IoLocationOutline className="absolute left-3 top-1/2 -translate-y-1/2 text-[#33cc99] text-lg" />
-          <input
-            type="text"
-            placeholder="Enter location"
-            className="w-full bg-transparent pl-10 pr-3 py-3 text-white placeholder:text-white/60 outline-none"
-          />
-        </div>
-
-        <div className="hidden sm:block h-8 w-px bg-white/20" />
-
-        <div className="relative sm:min-w-[180px]">
-          <FaHouseCircleCheck className="absolute left-3 top-1/2 -translate-y-1/2 text-[#33cc99] text-lg" />
-          <select className="w-full bg-transparent pl-10 pr-4 py-3 text-white outline-none appearance-none cursor-pointer">
-            <option className="text-black">Property Type</option>
-            <option className="text-black">Apartment</option>
-            <option className="text-black">Villa</option>
-            <option className="text-black">Commercial</option>
-          </select>
-        </div>
-
-        <button className="bg-[#33cc99]  hover:bg-[#33cc99] transition-all px-5 py-3 
-        rounded-lg flex items-center justify-center gap-2  text-[#0d1b2a] font-semibold whitespace-nowrap">
-          <IoSearch className="text-lg" />
-          Search
-        </button>
-      </div> */}
       <div className="w-full max-w-5xl mx-auto lg:mx-0 bg-[#274255] border border-white/20 rounded-2xl overflow-hidden shadow-lg">
-        <div className="flex flex-col xl:flex-row items-stretch sm:items-center gap-0 sm:gap-2  ite">
+        <div className="flex flex-col xl:flex-row  items-stretch sm:items-center gap-0 sm:gap-2  ite">
           <div className="px-2 pt-5 pb-4   ite">
             <h2 className="text-2xl md:text-3xl font-semibold text-white">
               Find Your Perfect Property
@@ -166,8 +138,8 @@ function LeftContent() {
           <div className="px-3 xl:pt-4 pb-4">
             <div className="flex  flex-row w-full justify-evenly  rounded-xl overflow-hidden border border-white/20  ">
               <button onClick={() => {setBtn('search')}} className={`text-white px-4 py-3  ${ btn === 'search' ? 'bg-[#33cc99]' : 'bg-[#274255]' }   font-semibold flex items-center justify-center gap-2`}>
-                <IoSearch />
-               Search
+                {/* <IoSearch /> */}
+               Buy/Sell
               </button>
 
               <button onClick={() => {setBtn('rent')}} className={`text-white px-4 py-3  ${ btn === 'rent' ? 'bg-[#33cc99]' : 'bg-[#274255]' }   font-semibold flex items-center justify-center gap-2`}>
@@ -193,7 +165,6 @@ function LeftContent() {
                 <p className="text-white text-left font-medium">
                   Enter Location
                 </p>
-
                 <input
                   type="text"
                   placeholder="e.g., Ambala, Haryana"
@@ -237,11 +208,7 @@ function LeftContent() {
 function RightPhones() {
   return (
     <div className="flex-1 hidden md:flex flex-col items-center lg:items-end  w-full lg:max-w-[55%] mt-8 lg:mt-0 ">
-      {/* <div className="flex items-end justify-center gap-2 w-full">
-        <PhoneNiwasAI />
-        <PhonePropertyDetails />
-        <PhoneDashboard />
-      </div> */}
+   
 
       <div className=" relative flex items-end justify-center w-full  max-w-5xl mx-auto h-full  sm:h-[340px] md:h-[420px] lg:h-[500px]">
         <div
@@ -386,30 +353,75 @@ function PhoneDashboard() {
 }
 
 function StatsBar() {
+  const sectionRef = useRef(null);
+
+  const [startCounter, setStartCounter] = useState(false);
+  const [stats, setStats] = useState({
+  agents: 0,
+  properties: 0,
+  customers: 0,
+  localities: 0,
+});
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStartCounter(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Counter Animation
+  useEffect(() => {
+    if (!startCounter) return;
+
+    const interval = setInterval(() => {
+      setStats((prev) => ({
+        agents: prev.agents < 150 ? Math.min(prev.agents + 3, 150) : 150,
+        properties: prev.properties < 500 ? Math.min(prev.properties + 10, 500) : 500,
+        customers: prev.customers < 1000 ? Math.min(prev.customers + 20, 1000) : 1000,
+        localities: prev.localities < 25 ? Math.min(prev.localities + 1, 25) : 25,
+      }));
+    }, 20);
+
+    return () => clearInterval(interval);
+  }, [startCounter]);
   return (
-    <div className="mb-0 sm:mb-8     py-4  flex  flex-col lg:flex-row w-full items-center gap-4 lg:items-stretch md:justify-between ">
+    <div    ref={sectionRef} className="mb-0 sm:mb-8  py-4  flex  flex-col lg:flex-row w-full items-center gap-4 lg:items-stretch md:justify-between ">
       <div className="bg-white/80 w-full sm:w-[60%] lg:w-[45%]   rounded-3xl px-2 py-3 lg:py-0  gap-5 items-center grid grid-cols-2 sm:grid-cols-4  ">
         {[
           {
             icon: <MdPerson className="text-[#0d1b2a] text-xl sm:text-2xl" />,
-            num: "150+",
+            num: `${stats.agents}+`,
             label: "Verified Agents",
           },
           {
             icon: <MdHome className="text-[#0d1b2a] text-xl sm:text-2xl" />,
-            num: "500+",
+            num: `${stats.properties}+`,
             label: "Properties Listed",
           },
           {
             icon: <MdGroups className="text-[#0d1b2a] text-xl sm:text-2xl" />,
-            num: "1000+",
+            num:`${stats.customers}+`,
             label: "Happy Customers",
           },
           {
             icon: (
               <MdLocationOn className="text-[#0d1b2a] text-xl sm:text-2xl" />
             ),
-            num: "25+",
+            num: `${stats.localities}+`,
             label: "Localities Covered",
           },
         ].map(({ icon, num, label }) => (

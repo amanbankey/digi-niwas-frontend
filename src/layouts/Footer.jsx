@@ -1,12 +1,10 @@
 import React from 'react'
-import { BsStars, BsTwitterX, BsLinkedin, BsFacebook, BsInstagram } from "react-icons/bs";
 import { NavLink } from 'react-router-dom';
 
 const footerLinks = {
-    Links: ["The Collection", "Agent Portal", "Intelligence", "Privacy", "Terms","Contact" ],
-    Company: ["About us", "Careers", "Blog", "Press", "Contact"],
-    Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy", "GDPR", "Compliance"],
-    // Resources: ["Help Center", "Documentation", "Community", "Webinars", "Partners"],
+    Quick_Links: [{label: "Home", path: "/"}, {label: "Explore Properties", path:"/explore-property"}, {label: "Niwas AI", path:"niwas-ai"}, {label: "Agent Corner", path: "/agent-corner"}, {label: "About", path: "/about"} ],
+    Legal: [ {label: "Privacy Policy", path: "/privacy-policy"}  , {label: "Terms of Service", path: "/terms-service"}, {label: "Cookie Policy", path: "/cookie-policy"}],
+  
   };
 
 const Footer = () => {
@@ -18,7 +16,6 @@ const Footer = () => {
             <div className=' w-full '> 
 
              <NavLink to="/" className="flex-shrink-0 flex items-center text-black duration-200">
-            
               <div className="flex items-center gap-1 justify-center  "> 
                  <img
                    src={' https://res.cloudinary.com/dhuabv2it/image/upload/v1780739847/DIGINIWAS_FINAL_page-2-removebg-preview_o3fesd.png'}
@@ -32,28 +29,21 @@ const Footer = () => {
              Elevated Living, Redefined. India's first digital-first luxury property ecosystem.
             </p></div>
             </div>
-            <div className="flex items-center gap-3">
-              {[BsTwitterX, BsLinkedin, BsFacebook, BsInstagram].map((Icon, i) => (
-                <button
-                  key={i}
-                  className="w-8 h-8   rounded-full flex items-center justify-center transition-colors"
-                >
-                  <Icon  className="text-gray-300 text-xs sm:text-base" />
-                </button>
-              ))}
-            </div>
+        
           </div>
 
          <div className='flex sm:flex-row flex-col justify-around   sm:max-w-3xl   w-full gap-10 '> 
           {Object.entries(footerLinks).map(([heading, links]) => (
             <div key={heading} className='  w-full'>
-              <h4 className="text-white font-semibold text-sm sm:text-lg md:text-xl mb-4">{heading}</h4>
+              <h4 className="text-white font-semibold text-sm sm:text-lg md:text-xl mb-4">{heading.replaceAll("_", " ")}</h4>
               <ul className="space-y-2.5">
-                {links.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="text-gray-400 hover:text-white text-sm sm:text-sm transition-colors">
-                      {link}
-                    </a>
+                {links.map((link, id) => (
+                  <li key={id}>
+                  <NavLink to={`${link.path}`}> 
+                    <span className="text-gray-400 hover:text-white text-sm sm:text-sm transition-colors">
+                      {link.label}
+                    </span>
+                     </NavLink>
                   </li>
                 ))}
               </ul>
@@ -68,10 +58,10 @@ const Footer = () => {
           </p> </div>
         
           <div className="flex items-center gap-4">
-            {["Privacy", "Terms", "Security"].map((item) => (
-              <a key={item} href="#" className="text-gray-400  hover:text-white text-sm transition-colors">
+            {["Privacy", "Terms", "Security"].map((item, id) => (
+              <span key={id}  className="text-gray-400  hover:text-white text-sm transition-colors">
                 {item}
-              </a>
+              </span>
             ))}
           </div>
         </div>

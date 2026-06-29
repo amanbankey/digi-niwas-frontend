@@ -7,10 +7,11 @@ import { BrowserRouter } from "react-router-dom";
 import { Toaster } from 'react-hot-toast';
 
 import "leaflet/dist/leaflet.css";
-
+import ScrollToTop from './components/common/ScrollToTop.jsx';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
       <BrowserRouter>
+       <ScrollToTop />
         <App />
         <Toaster />
       </BrowserRouter>

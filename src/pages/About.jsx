@@ -199,30 +199,6 @@ function StatisticsSection() {
           </div>
         </div>
 
-        {/* <div className="bg-[#2c3e50] p-8 rounded-3xl">
-          <div className="flex items-end justify-between h-[300px] gap-4">
-            <div className="flex flex-col items-center flex-1">
-              <div className="w-full bg-[#006d44] rounded-t-lg h-[20%]" />
-              <span className="mt-4 text-xs">2020</span>
-            </div>
-
-            <div className="flex flex-col items-center flex-1">
-              <div className="w-full bg-[#006d44] rounded-t-lg h-[40%]" />
-              <span className="mt-4 text-xs">2022</span>
-            </div>
-
-            <div className="flex flex-col items-center flex-1">
-              <div className="w-full bg-[#006d44] rounded-t-lg h-[65%]" />
-              <span className="mt-4 text-xs">2024</span>
-            </div>
-
-            <div className="flex flex-col items-center flex-1">
-              <div className="w-full bg-[#cca730] rounded-t-lg h-[90%]" />
-              <span className="mt-4 text-xs text-[#ffe088]">2026F</span>
-            </div>
-          </div>
-        </div> */}
-
         <div className="bg-[#2c3e50] p-8 rounded-3xl">
           <div className="flex items-end justify-between h-[300px] gap-4">
             <div className="flex flex-col justify-end items-center flex-1 h-full">

@@ -229,6 +229,17 @@ export default function NiwasAIFinds() {
     setStartIndex(0);
   }
 };
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setStartIndex((prev) =>
+      prev < properties.length - 3 ? prev + 1 : 0
+    );
+  }, 1000);
+
+  return () => clearInterval(interval);
+}, [properties.length]);
+
     return (
       <section id="niwas-ai" className="bg-[#274255] text-white px-8 py-10 sm:px-10 xl:px-14 lg:py-10  ">
         <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 sm:pb-10 lg:pb-20 xl:pb-32 lg:pt-5 gap-10 items-center">
@@ -257,7 +268,7 @@ export default function NiwasAIFinds() {
               ))}
             </div>
           </div>
-          {/* RIGHT - chat card */}
+       
           <div className="relative">
             <div className="relative rounded-2xl border border-[#1f3a3f] bg-[#0d2329]/60 backdrop-blur p-4 sm:p-5">
               {/* avatar top right */}
@@ -278,8 +289,7 @@ export default function NiwasAIFinds() {
               </div>
               {/* property cards */}
               <div className="relative">
-                <div className="flex gap-2 sm:gap-3 justify-between w-full  
-                ">
+                <div className="flex gap-2 sm:gap-3 justify-between w-full    ">
                   {visibleProperties.map((p) => (
                     <div key={p.title} className="rounded-xl w-full border border-[#1f3a3f] bg-[#0a1a1f]/80 overflow-hidden">
                       <div className="relative">

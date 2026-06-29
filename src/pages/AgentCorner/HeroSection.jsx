@@ -1,7 +1,33 @@
-import React from "react";
+import React, {useState, useRef, useEffect} from "react";
 
 const HeroSection = () => {
-    
+    const [stats, setStats] = useState({
+  leads: 0,
+  agents: 0,
+  transactions: 0,
+});
+useEffect(() => {
+  const interval = setInterval(() => {
+    setStats((prev) => ({
+      leads:
+        prev.leads < 10000
+          ? Math.min(prev.leads + 100, 10000)
+          : 10000,
+
+      agents:
+        prev.agents < 2500
+          ? Math.min(prev.agents + 25, 2500)
+          : 2500,
+
+      transactions:
+        prev.transactions < 500
+          ? Math.min(prev.transactions + 5, 500)
+          : 500,
+    }));
+  }, 20);
+
+  return () => clearInterval(interval);
+}, []);
   return (
     <div
       className="font-sans text-[#0d2633] overflow-x-hidden  "
@@ -46,18 +72,20 @@ const HeroSection = () => {
             </div>
 
             <div className="hidden lg:flex gap-6">
-              <StatCard
-                number="10,000+"
-                label="Verified Leads"
-              />
-              <StatCard
-                number="2,500+"
-                label="Active Agents"
-              />
-              <StatCard
-                number="₹500Cr+"
-                label="Transactions"
-              />
+           <StatCard
+                    number={`${stats.leads.toLocaleString()}+`}
+                    label="Verified Leads"
+                  />
+
+                  <StatCard
+                    number={`${stats.agents.toLocaleString()}+`}
+                    label="Active Agents"
+                  />
+
+                  <StatCard
+                    number={`₹${stats.transactions}Cr+`}
+                    label="Transactions"
+                  />
             </div>
           </section>
 

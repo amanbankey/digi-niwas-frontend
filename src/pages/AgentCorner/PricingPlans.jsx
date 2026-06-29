@@ -273,11 +273,9 @@ function NetworkDensity() {
                 />
               </svg>
 
-             
             </div>
           </div>
         </div>
-
    
       </div>
     </section>

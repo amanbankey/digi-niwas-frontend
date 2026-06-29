@@ -8,7 +8,6 @@ import { useState, useRef, useCallback } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { LuLogOut } from "react-icons/lu";
-// import ProfileDropdown from "../components/ProfileDropdown";
 import { CgProfile } from "react-icons/cg";
 import { IoSearchOutline } from "react-icons/io5";
 import { navItems } from "../data/navlinks";
@@ -74,16 +73,7 @@ const Navbar = ({show, setShow}) => {
             </div>
 
             <div className="flex items-center gap-1 sm:gap-3 overflow-hidden">
-            {/* {!isLoggedIn && ( */}
-                {/* <NavLink
-                  to="/admin-login"
-                  className="hidden sm:block px-4 py-2  hover:bg-[#0A2540] hover:text-white border border-[#0A2540]   text-[#0A2540]  rounded-lg cursor-pointer "
-                >
-                  Login
-                </NavLink> */}
-              {/* )} */}
-
-              {/* {!isLoggedIn && ( */}
+         
               <div className="flex gap-0 sm:gap-4 overflow-hidden">
               <div className="relative sm:w-full w-32  ">
               <IoSearchOutline
@@ -104,25 +94,9 @@ const Navbar = ({show, setShow}) => {
                             Get Started
                             </button> </div>
                             </div>
-                {/* <NavLink
-                  to="/signup"
-                  className="hidden sm:block px-4 py-2 bg-[#0A2540] hover:bg-blue-700 text-white rounded-lg  cursor-pointer"
-                > */}
-                 
-                {/* </NavLink> */}
-              {/* )} */}
               
 
-              {/* <div className="hidden lg:block">
-                <div className="flex justify-center gap-3  ">
-                  {isLoggedIn && (
-                    <>
-                      <CgProfile className="w-7 h-7" />
-                      <ProfileDropdown handleLogout={handleLogout} />
-                    </>
-                  )}
-                </div>
-              </div> */}
+            
 
               {/* cross and show button  */}
               {!mobileMenuOpen && (
@@ -173,12 +147,7 @@ const Navbar = ({show, setShow}) => {
 
 
               <div className="flex flex-col items-start gap-3 mb-1 ">
-                {/* <button
-                  className="hover:text-white text-[#30A2540] bg-white  hover:bg-[#0A2540] border border-[#0A2540] px-3 py-2  rounded-lg "
-                  onClick={onDashboard}
-                >
-                  Dashboard
-                </button> */}
+               
 
                 {isLoggedIn && (
                   <button
@@ -203,17 +172,7 @@ const Navbar = ({show, setShow}) => {
                   Get Started
                 </NavLink>
               )}
-              {/* {!isLoggedIn && (
-                <NavLink
-                  onClick={() => {
-                    setMobileMenuOpen((prev) => !prev);
-                  }}
-                  to="/admin-login"
-                  className="sm:hidden w-40 px-4 py-2  hover:bg-[#0A2540] hover:text-white border border-[#0A2540]   text-[#0A2540]  rounded-lg cursor-pointer "
-                >
-                  Login
-                </NavLink>
-              )} */}
+      
 
              
             </div>
